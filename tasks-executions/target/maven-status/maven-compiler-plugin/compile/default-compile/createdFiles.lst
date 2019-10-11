@@ -1,0 +1,13 @@
+com/house/tasktracker/domain/TaskEventService.class
+com/house/tasktracker/TasksExecutionsApplication.class
+com/house/tasktracker/infrastructure/StreamConfig.class
+com/house/tasktracker/controller/TaskDto.class
+com/house/tasktracker/infrastructure/OrderOffsetChangedSink.class
+com/house/tasktracker/infrastructure/NotificationsClient.class
+com/house/tasktracker/controller/AddTaskCommand.class
+com/house/tasktracker/controller/TasksController.class
+com/house/tasktracker/infrastructure/NotificationsClient$SendNotificationCommand.class
+com/house/tasktracker/domain/HouseTaskRepository.class
+com/house/tasktracker/domain/Status.class
+com/house/tasktracker/domain/HouseTask.class
+com/house/tasktracker/domain/TaskExecutionEvent.class

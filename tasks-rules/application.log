@@ -1,0 +1,12 @@
+2019-10-10 10:48:10.088  INFO 10927 --- [Thread-4] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-10-10 10:48:10.876  INFO 10927 --- [Thread-4] o.s.i.channel.PublishSubscribeChannel    : Channel 'tasks-rules.errorChannel' has 0 subscriber(s).
+2019-10-10 10:48:10.884  INFO 10927 --- [Thread-4] o.s.i.endpoint.EventDrivenConsumer       : stopped _org.springframework.integration.errorLogger
+2019-10-10 10:48:10.967  INFO 10927 --- [Thread-4] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-10-10 10:48:11.249  INFO 10927 --- [Thread-4] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-10 10:48:11.420  INFO 10927 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-10-10 10:48:11.938  INFO 10927 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-10 10:48:12.136  INFO 10927 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-10 10:48:12.225  INFO 10927 --- [Thread-4] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: offset-changed
+2019-10-10 10:48:12.244  INFO 10927 --- [Thread-4] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: errorChannel
+2019-10-10 10:48:12.245  INFO 10927 --- [Thread-4] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2019-10-10 10:48:12.262  INFO 10927 --- [Thread-4] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: _org.springframework.integration.errorLogger.handler

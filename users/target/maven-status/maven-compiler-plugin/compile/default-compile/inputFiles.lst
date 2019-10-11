@@ -1,0 +1,13 @@
+/home/mihaic/house-tasks-tracker/users/src/main/java/com/house/taskstracker/user/service/JwtAuthenticationResponse.java
+/home/mihaic/house-tasks-tracker/users/src/main/java/com/house/taskstracker/user/domain/UserRepository.java
+/home/mihaic/house-tasks-tracker/users/src/main/java/com/house/taskstracker/user/domain/User.java
+/home/mihaic/house-tasks-tracker/users/src/main/java/com/house/taskstracker/user/UserAddRequest.java
+/home/mihaic/house-tasks-tracker/users/src/main/java/com/house/taskstracker/user/controller/AuthenticationRestController.java
+/home/mihaic/house-tasks-tracker/users/src/main/java/com/house/taskstracker/user/JwtTokenUtil.java
+/home/mihaic/house-tasks-tracker/users/src/main/java/com/house/taskstracker/user/JwtUser.java
+/home/mihaic/house-tasks-tracker/users/src/main/java/com/house/taskstracker/UsersApplication.java
+/home/mihaic/house-tasks-tracker/users/src/main/java/com/house/taskstracker/user/JwtUserFactory.java
+/home/mihaic/house-tasks-tracker/users/src/main/java/com/house/taskstracker/user/JwtAuthenticationTokenFilter.java
+/home/mihaic/house-tasks-tracker/users/src/main/java/com/house/taskstracker/user/JwtAuthenticationRequest.java
+/home/mihaic/house-tasks-tracker/users/src/main/java/com/house/taskstracker/user/service/JwtUserDetailsServiceImpl.java
+/home/mihaic/house-tasks-tracker/users/src/main/java/com/house/taskstracker/user/JwtAuthenticationEntryPoint.java

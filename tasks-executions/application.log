@@ -1,0 +1,18 @@
+2019-10-10 09:17:24.314  INFO 11040 --- [KafkaConsumerDestination{consumerDestinationName='offset-changed', partitions=1, dlqName='null'}.container-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-3, groupId=anonymous.872b06d1-a454-4a1c-b5ee-1b7332483dd2] Node 1001 was unable to process the fetch request with (sessionId=569204849, epoch=163163): INVALID_FETCH_SESSION_EPOCH.
+2019-10-10 10:48:09.482  INFO 11040 --- [KafkaConsumerDestination{consumerDestinationName='offset-changed', partitions=1, dlqName='null'}.container-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-3, groupId=anonymous.872b06d1-a454-4a1c-b5ee-1b7332483dd2] Error sending fetch request (sessionId=1123125073, epoch=10790) to node 1001: org.apache.kafka.common.errors.DisconnectException.
+2019-10-10 10:48:09.485  INFO 11040 --- [kafka-coordinator-heartbeat-thread | anonymous.872b06d1-a454-4a1c-b5ee-1b7332483dd2] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-3, groupId=anonymous.872b06d1-a454-4a1c-b5ee-1b7332483dd2] Group coordinator 127.0.0.1:9092 (id: 2147482646 rack: null) is unavailable or invalid, will attempt rediscovery
+2019-10-10 10:48:10.081  INFO 11040 --- [KafkaConsumerDestination{consumerDestinationName='offset-changed', partitions=1, dlqName='null'}.container-0-C-1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService
+2019-10-10 10:48:10.117  INFO 11040 --- [KafkaConsumerDestination{consumerDestinationName='offset-changed', partitions=1, dlqName='null'}.container-0-C-1] essageListenerContainer$ListenerConsumer : Consumer stopped
+2019-10-10 10:48:10.123  INFO 11040 --- [Thread-4] s.i.k.i.KafkaMessageDrivenChannelAdapter : stopped org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@1d035be3
+2019-10-10 10:48:10.134  INFO 11040 --- [Thread-4] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-10-10 10:48:10.139  INFO 11040 --- [Thread-4] o.s.i.channel.PublishSubscribeChannel    : Channel 'tasks-executions.errorChannel' has 0 subscriber(s).
+2019-10-10 10:48:10.139  INFO 11040 --- [Thread-4] o.s.i.endpoint.EventDrivenConsumer       : stopped _org.springframework.integration.errorLogger
+2019-10-10 10:48:10.153  INFO 11040 --- [Thread-4] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-10-10 10:48:10.214  INFO 11040 --- [Thread-4] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-10 10:48:10.370  INFO 11040 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-10-10 10:48:11.176  INFO 11040 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-10 10:48:11.256  INFO 11040 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-10 10:48:11.338  INFO 11040 --- [Thread-4] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2019-10-10 10:48:11.338  INFO 11040 --- [Thread-4] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: errorChannel
+2019-10-10 10:48:11.339  INFO 11040 --- [Thread-4] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: offset-changed
+2019-10-10 10:48:11.343  INFO 11040 --- [Thread-4] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: _org.springframework.integration.errorLogger.handler

@@ -1,0 +1,15 @@
+package com.house.taskstracker.user.domain;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.UUID;
+
+/**
+ * Created by stephan on 20.03.16.
+ */
+
+public interface UserRepository extends JpaRepository<User, UUID> {
+    User findByUsername(String username);
+
+    User findByEmail(String lastname);
+}

@@ -1,0 +1,29 @@
+spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults: false
+
+spring.liquibase.enabled: true
+spring.liquibase.drop-first: true
+spring.liquibase.change-log: classpath:liquibase/master-changelog.xml
+
+
+spring.datasource:
+  driverClassName: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5435/postgres
+  username: postgres
+
+spring.jpa:
+  database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+#  generate-ddl: true
+  show-sql: true
+
+  hibernate:
+    ddl-auto: validate
+
+
+
+spring.application.name: notifications
+server.port: 8083
+logging:
+  file: application.log
+
+tasks-rules-service:
+ order-rules: http://localhost:8081/order-rules
