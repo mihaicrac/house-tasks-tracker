@@ -1,0 +1,4 @@
+/home/mihaic/house-tasks-tracker/zuulsvr/src/main/java/com/house/taskstracker/zuulsvr/filter/FilterUtils.java
+/home/mihaic/house-tasks-tracker/zuulsvr/src/main/java/com/house/taskstracker/zuulsvr/filter/TrackingFilter.java
+/home/mihaic/house-tasks-tracker/zuulsvr/src/main/java/com/house/taskstracker/zuulsvr/filter/AuthenticationFilter.java
+/home/mihaic/house-tasks-tracker/zuulsvr/src/main/java/com/house/taskstracker/zuulsvr/ZuulServerApplication.java

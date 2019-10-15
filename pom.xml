@@ -13,6 +13,9 @@
         <module>tasks-executions</module>
         <module>notifications</module>
         <module>users</module>
+        <module>zuulsvr</module>
+        <module>eurekasvr</module>
+        <module>authentication</module>
     </modules>
 
     <properties>

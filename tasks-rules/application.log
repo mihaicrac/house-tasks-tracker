@@ -1,12 +1,901 @@
-2019-10-10 10:48:10.088  INFO 10927 --- [Thread-4] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2019-10-10 10:48:10.876  INFO 10927 --- [Thread-4] o.s.i.channel.PublishSubscribeChannel    : Channel 'tasks-rules.errorChannel' has 0 subscriber(s).
-2019-10-10 10:48:10.884  INFO 10927 --- [Thread-4] o.s.i.endpoint.EventDrivenConsumer       : stopped _org.springframework.integration.errorLogger
-2019-10-10 10:48:10.967  INFO 10927 --- [Thread-4] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2019-10-10 10:48:11.249  INFO 10927 --- [Thread-4] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-10-10 10:48:11.420  INFO 10927 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-10-10 10:48:11.938  INFO 10927 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-10-10 10:48:12.136  INFO 10927 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-10-10 10:48:12.225  INFO 10927 --- [Thread-4] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: offset-changed
-2019-10-10 10:48:12.244  INFO 10927 --- [Thread-4] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: errorChannel
-2019-10-10 10:48:12.245  INFO 10927 --- [Thread-4] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
-2019-10-10 10:48:12.262  INFO 10927 --- [Thread-4] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: _org.springframework.integration.errorLogger.handler
+2019-10-15 12:08:31.755  INFO 31823 --- [main] c.h.taskstracker.TasksRulesApplication   : No active profile set, falling back to default profiles: default
+2019-10-15 12:08:32.908  INFO 31823 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-15 12:08:33.079  INFO 31823 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 163ms. Found 1 repository interfaces.
+2019-10-15 12:08:33.230  WARN 31823 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-10-15 12:08:33.508  INFO 31823 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=853764ae-c9e7-30d1-b4c0-a3f229721519
+2019-10-15 12:08:33.530  INFO 31823 --- [main] o.s.c.a.ConfigurationClassEnhancer       : @Bean method BinderFactoryConfiguration.implicitFunctionBinder is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2019-10-15 12:08:33.569  INFO 31823 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-10-15 12:08:33.573  INFO 31823 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-10-15 12:08:33.580  INFO 31823 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-10-15 12:08:33.631  INFO 31823 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$6d4cca5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 12:08:33.663  INFO 31823 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3322bb22] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 12:08:33.684  INFO 31823 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 12:08:33.709  INFO 31823 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$9e147651] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 12:08:33.716  INFO 31823 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$79a68171] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 12:08:33.725  INFO 31823 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$b28e2a3e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 12:08:33.733  INFO 31823 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 12:08:33.752  INFO 31823 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$4f3cbe1f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 12:08:34.116  INFO 31823 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-10-15 12:08:34.145  INFO 31823 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-15 12:08:34.146  INFO 31823 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-10-15 12:08:34.267  INFO 31823 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-15 12:08:34.268  INFO 31823 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2498 ms
+2019-10-15 12:08:34.445  WARN 31823 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-10-15 12:08:34.445  INFO 31823 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-10-15 12:08:34.458  INFO 31823 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@3bda1f0
+2019-10-15 12:08:35.088  INFO 31823 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-10-15 12:08:35.395  INFO 31823 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-15 12:08:36.651 ERROR 31823 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+org.postgresql.util.PSQLException: The server requested password-based authentication, but no password was provided.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:540) ~[postgresql-42.2.8.jar:42.2.8]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:141) ~[postgresql-42.2.8.jar:42.2.8]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:192) ~[postgresql-42.2.8.jar:42.2.8]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49) ~[postgresql-42.2.8.jar:42.2.8]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:195) ~[postgresql-42.2.8.jar:42.2.8]
+	at org.postgresql.Driver.makeConnection(Driver.java:458) ~[postgresql-42.2.8.jar:42.2.8]
+	at org.postgresql.Driver.connect(Driver.java:260) ~[postgresql-42.2.8.jar:42.2.8]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource$$FastClassBySpringCGLIB$$eeb1ae86.invoke(<generated>) ~[HikariCP-3.2.0.jar:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749) ~[spring-aop-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136) ~[spring-aop-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124) ~[spring-aop-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) ~[spring-aop-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at com.zaxxer.hikari.HikariDataSource$$EnhancerBySpringCGLIB$$4f18acce.getConnection(<generated>) ~[HikariCP-3.2.0.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:302) ~[liquibase-core-3.6.3.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:307) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at com.house.taskstracker.TasksRulesApplication.main(TasksRulesApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at com.intellij.rt.execution.application.AppMainV2.main(AppMainV2.java:131) ~[idea_rt.jar:na]
+
+2019-10-15 12:08:36.653  WARN 31823 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: The server requested password-based authentication, but no password was provided.
+2019-10-15 12:08:36.653  INFO 31823 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-10-15 12:08:36.660  INFO 31823 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-10-15 12:08:36.684  INFO 31823 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-10-15 12:08:36.688 ERROR 31823 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: The server requested password-based authentication, but no password was provided.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:307) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at com.house.taskstracker.TasksRulesApplication.main(TasksRulesApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at com.intellij.rt.execution.application.AppMainV2.main(AppMainV2.java:131) ~[idea_rt.jar:na]
+Caused by: liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: The server requested password-based authentication, but no password was provided.
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:307) ~[liquibase-core-3.6.3.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	... 23 common frames omitted
+Caused by: org.postgresql.util.PSQLException: The server requested password-based authentication, but no password was provided.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:540) ~[postgresql-42.2.8.jar:42.2.8]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:141) ~[postgresql-42.2.8.jar:42.2.8]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:192) ~[postgresql-42.2.8.jar:42.2.8]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49) ~[postgresql-42.2.8.jar:42.2.8]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:195) ~[postgresql-42.2.8.jar:42.2.8]
+	at org.postgresql.Driver.makeConnection(Driver.java:458) ~[postgresql-42.2.8.jar:42.2.8]
+	at org.postgresql.Driver.connect(Driver.java:260) ~[postgresql-42.2.8.jar:42.2.8]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource$$FastClassBySpringCGLIB$$eeb1ae86.invoke(<generated>) ~[HikariCP-3.2.0.jar:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749) ~[spring-aop-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136) ~[spring-aop-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124) ~[spring-aop-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) ~[spring-aop-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at com.zaxxer.hikari.HikariDataSource$$EnhancerBySpringCGLIB$$4f18acce.getConnection(<generated>) ~[HikariCP-3.2.0.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:302) ~[liquibase-core-3.6.3.jar:na]
+	... 25 common frames omitted
+
+2019-10-15 13:28:56.253  INFO 10429 --- [main] c.h.taskstracker.TasksRulesApplication   : No active profile set, falling back to default profiles: default
+2019-10-15 13:28:57.361  INFO 10429 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-15 13:28:57.553  INFO 10429 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 179ms. Found 1 repository interfaces.
+2019-10-15 13:28:57.698  WARN 10429 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-10-15 13:28:58.050  INFO 10429 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=853764ae-c9e7-30d1-b4c0-a3f229721519
+2019-10-15 13:28:58.080  INFO 10429 --- [main] o.s.c.a.ConfigurationClassEnhancer       : @Bean method BinderFactoryConfiguration.implicitFunctionBinder is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2019-10-15 13:28:58.125  INFO 10429 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-10-15 13:28:58.128  INFO 10429 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-10-15 13:28:58.149  INFO 10429 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-10-15 13:28:58.220  INFO 10429 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$2c3fdb2b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 13:28:58.251  INFO 10429 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$588dc9a8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 13:28:58.278  INFO 10429 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 13:28:58.306  INFO 10429 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$c37f84d7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 13:28:58.319  INFO 10429 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$9f118ff7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 13:28:58.337  INFO 10429 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$d7f938c4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 13:28:58.345  INFO 10429 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 13:28:58.370  INFO 10429 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$74a7cca5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 13:28:58.878  INFO 10429 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-10-15 13:28:58.927  INFO 10429 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-15 13:28:58.928  INFO 10429 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-10-15 13:28:59.120  INFO 10429 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-15 13:28:59.120  INFO 10429 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2851 ms
+2019-10-15 13:28:59.270  WARN 10429 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-10-15 13:28:59.270  INFO 10429 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-10-15 13:28:59.280  INFO 10429 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@441aa7ae
+2019-10-15 13:29:00.002  INFO 10429 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-10-15 13:29:00.492  INFO 10429 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-15 13:29:00.833  INFO 10429 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-15 13:29:01.514  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 13:29:01.533  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.databasechangeloglock (ID INTEGER NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP WITHOUT TIME ZONE, LOCKEDBY VARCHAR(255), CONSTRAINT DATABASECHANGELOGLOCK_PKEY PRIMARY KEY (ID))
+2019-10-15 13:29:01.571  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 13:29:01.575  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : DELETE FROM public.databasechangeloglock
+2019-10-15 13:29:01.576  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangeloglock (ID, LOCKED) VALUES (1, FALSE)
+2019-10-15 13:29:01.579  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-10-15 13:29:01.585  INFO 10429 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-10-15 13:29:01.586  INFO 10429 --- [main] liquibase.command.core.DropAllCommand    : Dropping Database Objects in schema: postgres.public
+2019-10-15 13:29:01.605  INFO 10429 --- [main] l.c.StandardChangeLogHistoryService      : Creating database history table with name: public.databasechangelog
+2019-10-15 13:29:01.606  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.databasechangelog (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP WITHOUT TIME ZONE NOT NULL, ORDEREXECUTED INTEGER NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+2019-10-15 13:29:01.618  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 13:29:01.630  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT c.relname AS SEQUENCE_NAME FROM pg_class c join pg_namespace on c.relnamespace = pg_namespace.oid WHERE c.relkind='S' AND nspname = 'public' AND c.oid not in (select d.objid FROM pg_depend d where d.refobjsubid > 0)
+2019-10-15 13:29:01.671  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM "public"."databasechangelog"
+2019-10-15 13:29:01.673  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."databasechangelog"
+2019-10-15 13:29:01.675  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM "public"."databasechangeloglock"
+2019-10-15 13:29:01.676  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."databasechangeloglock"
+2019-10-15 13:29:01.676  INFO 10429 --- [main] l.database.core.PostgresDatabase         : Successfully deleted all supported object types in schema postgres.public.
+2019-10-15 13:29:01.679  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 13:29:01.680  INFO 10429 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-10-15 13:29:01.680  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 13:29:01.681  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 13:29:01.683  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.databasechangeloglock (ID INTEGER NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP WITHOUT TIME ZONE, LOCKEDBY VARCHAR(255), CONSTRAINT DATABASECHANGELOGLOCK_PKEY PRIMARY KEY (ID))
+2019-10-15 13:29:01.694  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 13:29:01.695  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : DELETE FROM public.databasechangeloglock
+2019-10-15 13:29:01.696  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangeloglock (ID, LOCKED) VALUES (1, FALSE)
+2019-10-15 13:29:01.698  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-10-15 13:29:01.702  INFO 10429 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-10-15 13:29:02.396  INFO 10429 --- [main] l.c.StandardChangeLogHistoryService      : Creating database history table with name: public.databasechangelog
+2019-10-15 13:29:02.400  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.databasechangelog (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP WITHOUT TIME ZONE NOT NULL, ORDEREXECUTED INTEGER NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+2019-10-15 13:29:02.412  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangelog
+2019-10-15 13:29:02.414  INFO 10429 --- [main] l.c.StandardChangeLogHistoryService      : Reading from public.databasechangelog
+2019-10-15 13:29:02.414  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-10-15 13:29:02.415  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 13:29:02.426  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.order_rules (
+    id uuid PRIMARY KEY,
+    rule_offset integer
+)
+2019-10-15 13:29:02.434  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.order_rule_items (
+    order_rule_id uuid REFERENCES order_rules(id),
+    order_id integer,
+    user_id uuid,
+    out_of_order_occurrences integer,
+    index_id integer,
+    PRIMARY KEY(order_rule_id, order_id)
+)
+2019-10-15 13:29:02.448  INFO 10429 --- [main] liquibase.changelog.ChangeSet            : SQL in file changelog-initial.sql executed
+2019-10-15 13:29:02.451  INFO 10429 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:liquibase/changelog/changelog-initial.xml::changelog-initial::mihai.crac ran successfully in 28ms
+2019-10-15 13:29:02.451  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MAX(ORDEREXECUTED) FROM public.databasechangelog
+2019-10-15 13:29:02.461  INFO 10429 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangelog (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('changelog-initial', 'mihai.crac', 'classpath:liquibase/changelog/changelog-initial.xml', NOW(), 1, '8:ad6e1278a2e0b5ea392790b09f0ca746', 'sqlFile', '', 'EXECUTED', NULL, NULL, '3.6.3', '1135342416')
+2019-10-15 13:29:02.474  INFO 10429 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-10-15 13:29:02.589  INFO 10429 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-10-15 13:29:02.671  INFO 10429 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.11.Final}
+2019-10-15 13:29:02.673  INFO 10429 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-10-15 13:29:02.872  INFO 10429 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-10-15 13:29:03.034  INFO 10429 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-10-15 13:29:03.049  INFO 10429 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
+2019-10-15 13:29:03.053  INFO 10429 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@630a647c
+2019-10-15 13:29:03.777  INFO 10429 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-10-15 13:29:04.142  WARN 10429 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-10-15 13:29:04.143  INFO 10429 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-10-15 13:29:04.358  INFO 10429 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-15 13:29:04.409  WARN 10429 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-10-15 13:29:05.175  INFO 10429 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2019-10-15 13:29:05.354  INFO 10429 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel offset-changed
+2019-10-15 13:29:05.391  INFO 10429 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel nullChannel
+2019-10-15 13:29:05.402  INFO 10429 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
+2019-10-15 13:29:05.448  INFO 10429 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler errorLogger
+2019-10-15 13:29:05.504  INFO 10429 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-10-15 13:29:05.505  INFO 10429 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 1 subscriber(s).
+2019-10-15 13:29:05.505  INFO 10429 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started _org.springframework.integration.errorLogger
+2019-10-15 13:29:05.938  INFO 10429 --- [main] o.s.c.s.b.k.p.KafkaTopicProvisioner      : Using kafka topic for outbound: offset-changed
+2019-10-15 13:29:05.942  INFO 10429 --- [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2019-10-15 13:29:05.992  INFO 10429 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version : 2.0.1
+2019-10-15 13:29:05.993  INFO 10429 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId : fa14705e51bd2ce5
+2019-10-15 13:29:06.666  INFO 10429 --- [main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+2019-10-15 13:29:06.689  INFO 10429 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version : 2.0.1
+2019-10-15 13:29:06.689  INFO 10429 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId : fa14705e51bd2ce5
+2019-10-15 13:29:06.697  INFO 10429 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata        : Cluster ID: 3vqBT9d8SYGubDwc03G1kw
+2019-10-15 13:29:06.698  INFO 10429 --- [main] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2019-10-15 13:29:06.715  INFO 10429 --- [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.offset-changed' has 1 subscriber(s).
+2019-10-15 13:29:06.738  INFO 10429 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-10-15 13:29:06.780  INFO 10429 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-10-15 13:29:06.780  INFO 10429 --- [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2019-10-15 13:29:06.794  INFO 10429 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1571135346792 with initial instances count: 0
+2019-10-15 13:29:06.799  INFO 10429 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application TASKS-RULES with eureka with status UP
+2019-10-15 13:29:06.885  INFO 10429 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-10-15 13:29:06.885  INFO 10429 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+2019-10-15 13:29:06.888  INFO 10429 --- [main] c.h.taskstracker.TasksRulesApplication   : Started TasksRulesApplication in 13.093 seconds (JVM running for 13.649)
+2019-10-15 13:39:29.561  INFO 10429 --- [Thread-7] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application TASKS-RULES with eureka with status DOWN
+2019-10-15 13:39:29.566  INFO 10429 --- [Thread-7] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-10-15 13:39:29.567  INFO 10429 --- [Thread-7] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 0 subscriber(s).
+2019-10-15 13:39:29.567  INFO 10429 --- [Thread-7] o.s.i.endpoint.EventDrivenConsumer       : stopped _org.springframework.integration.errorLogger
+2019-10-15 13:39:29.570  INFO 10429 --- [Thread-7] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-15 13:39:29.573  INFO 10429 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-10-15 13:39:29.576  INFO 10429 --- [Thread-7] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-10-15 13:39:29.582  INFO 10429 --- [Thread-7] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: offset-changed
+2019-10-15 13:39:29.582  INFO 10429 --- [Thread-7] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2019-10-15 13:39:29.582  INFO 10429 --- [Thread-7] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: errorChannel
+2019-10-15 13:39:29.582  INFO 10429 --- [Thread-7] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: _org.springframework.integration.errorLogger.handler
+2019-10-15 13:39:29.583  INFO 10429 --- [Thread-7] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2019-10-15 13:39:29.583  INFO 10429 --- [Thread-7] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2019-10-15 13:39:29.583  INFO 10429 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-15 13:39:29.587  INFO 10429 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-15 13:39:35.048  INFO 11145 --- [main] c.h.taskstracker.TasksRulesApplication   : No active profile set, falling back to default profiles: default
+2019-10-15 13:39:36.061  INFO 11145 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-15 13:39:36.230  INFO 11145 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 161ms. Found 1 repository interfaces.
+2019-10-15 13:39:36.405  WARN 11145 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-10-15 13:39:36.666  INFO 11145 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=853764ae-c9e7-30d1-b4c0-a3f229721519
+2019-10-15 13:39:36.687  INFO 11145 --- [main] o.s.c.a.ConfigurationClassEnhancer       : @Bean method BinderFactoryConfiguration.implicitFunctionBinder is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2019-10-15 13:39:36.727  INFO 11145 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-10-15 13:39:36.731  INFO 11145 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-10-15 13:39:36.737  INFO 11145 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-10-15 13:39:36.792  INFO 11145 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$aef90d4d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 13:39:36.821  INFO 11145 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$db46fbca] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 13:39:36.851  INFO 11145 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 13:39:36.883  INFO 11145 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$4638b6f9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 13:39:36.893  INFO 11145 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$21cac219] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 13:39:36.902  INFO 11145 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$5ab26ae6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 13:39:36.907  INFO 11145 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 13:39:36.928  INFO 11145 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f760fec7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 13:39:37.227  INFO 11145 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-10-15 13:39:37.255  INFO 11145 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-15 13:39:37.255  INFO 11145 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-10-15 13:39:37.453  INFO 11145 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-15 13:39:37.454  INFO 11145 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2389 ms
+2019-10-15 13:39:37.661  WARN 11145 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-10-15 13:39:37.665  INFO 11145 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-10-15 13:39:37.685  INFO 11145 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@415262a0
+2019-10-15 13:39:38.303  INFO 11145 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-10-15 13:39:38.622  INFO 11145 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-15 13:39:38.752  INFO 11145 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-15 13:39:39.305  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 13:39:39.307  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 13:39:39.309  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-10-15 13:39:39.322  INFO 11145 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-10-15 13:39:39.323  INFO 11145 --- [main] liquibase.command.core.DropAllCommand    : Dropping Database Objects in schema: postgres.public
+2019-10-15 13:39:39.347  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-10-15 13:39:39.354  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT c.relname AS SEQUENCE_NAME FROM pg_class c join pg_namespace on c.relnamespace = pg_namespace.oid WHERE c.relkind='S' AND nspname = 'public' AND c.oid not in (select d.objid FROM pg_depend d where d.refobjsubid > 0)
+2019-10-15 13:39:40.067  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : ALTER TABLE "public"."order_rule_items" DROP CONSTRAINT "order_rule_items_order_rule_id_fkey"
+2019-10-15 13:39:40.072  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."order_rule_items" CASCADE
+2019-10-15 13:39:40.075  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."order_rules" CASCADE
+2019-10-15 13:39:40.078  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM "public"."databasechangelog"
+2019-10-15 13:39:40.079  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."databasechangelog"
+2019-10-15 13:39:40.080  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM "public"."databasechangeloglock"
+2019-10-15 13:39:40.081  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."databasechangeloglock"
+2019-10-15 13:39:40.081  INFO 11145 --- [main] l.database.core.PostgresDatabase         : Successfully deleted all supported object types in schema postgres.public.
+2019-10-15 13:39:40.084  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 13:39:40.088  INFO 11145 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-10-15 13:39:40.088  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 13:39:40.089  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 13:39:40.092  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.databasechangeloglock (ID INTEGER NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP WITHOUT TIME ZONE, LOCKEDBY VARCHAR(255), CONSTRAINT DATABASECHANGELOGLOCK_PKEY PRIMARY KEY (ID))
+2019-10-15 13:39:40.109  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 13:39:40.111  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : DELETE FROM public.databasechangeloglock
+2019-10-15 13:39:40.112  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangeloglock (ID, LOCKED) VALUES (1, FALSE)
+2019-10-15 13:39:40.114  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-10-15 13:39:40.118  INFO 11145 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-10-15 13:39:40.247  INFO 11145 --- [main] l.c.StandardChangeLogHistoryService      : Creating database history table with name: public.databasechangelog
+2019-10-15 13:39:40.249  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.databasechangelog (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP WITHOUT TIME ZONE NOT NULL, ORDEREXECUTED INTEGER NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+2019-10-15 13:39:40.261  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangelog
+2019-10-15 13:39:40.261  INFO 11145 --- [main] l.c.StandardChangeLogHistoryService      : Reading from public.databasechangelog
+2019-10-15 13:39:40.262  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-10-15 13:39:40.262  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 13:39:40.270  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.order_rules (
+    id uuid PRIMARY KEY,
+    rule_offset integer
+)
+2019-10-15 13:39:40.279  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.order_rule_items (
+    order_rule_id uuid REFERENCES order_rules(id),
+    order_id integer,
+    user_id uuid,
+    out_of_order_occurrences integer,
+    index_id integer,
+    PRIMARY KEY(order_rule_id, order_id)
+)
+2019-10-15 13:39:40.287  INFO 11145 --- [main] liquibase.changelog.ChangeSet            : SQL in file changelog-initial.sql executed
+2019-10-15 13:39:40.294  INFO 11145 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:liquibase/changelog/changelog-initial.xml::changelog-initial::mihai.crac ran successfully in 26ms
+2019-10-15 13:39:40.295  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MAX(ORDEREXECUTED) FROM public.databasechangelog
+2019-10-15 13:39:40.298  INFO 11145 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangelog (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('changelog-initial', 'mihai.crac', 'classpath:liquibase/changelog/changelog-initial.xml', NOW(), 1, '8:ad6e1278a2e0b5ea392790b09f0ca746', 'sqlFile', '', 'EXECUTED', NULL, NULL, '3.6.3', '1135980263')
+2019-10-15 13:39:40.303  INFO 11145 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-10-15 13:39:40.422  INFO 11145 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-10-15 13:39:40.497  INFO 11145 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.11.Final}
+2019-10-15 13:39:40.499  INFO 11145 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-10-15 13:39:40.661  INFO 11145 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-10-15 13:39:40.805  INFO 11145 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-10-15 13:39:40.817  INFO 11145 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
+2019-10-15 13:39:40.822  INFO 11145 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@74307afd
+2019-10-15 13:39:41.366  INFO 11145 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-10-15 13:39:41.657  WARN 11145 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-10-15 13:39:41.657  INFO 11145 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-10-15 13:39:41.881  INFO 11145 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-15 13:39:41.938  WARN 11145 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-10-15 13:39:42.718  INFO 11145 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2019-10-15 13:39:42.880  INFO 11145 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel offset-changed
+2019-10-15 13:39:42.957  INFO 11145 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel nullChannel
+2019-10-15 13:39:42.972  INFO 11145 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
+2019-10-15 13:39:42.997  INFO 11145 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler errorLogger
+2019-10-15 13:39:43.025  INFO 11145 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-10-15 13:39:43.026  INFO 11145 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 1 subscriber(s).
+2019-10-15 13:39:43.026  INFO 11145 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started _org.springframework.integration.errorLogger
+2019-10-15 13:39:43.345  INFO 11145 --- [main] o.s.c.s.b.k.p.KafkaTopicProvisioner      : Using kafka topic for outbound: offset-changed
+2019-10-15 13:39:43.350  INFO 11145 --- [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2019-10-15 13:39:43.395  INFO 11145 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version : 2.0.1
+2019-10-15 13:39:43.395  INFO 11145 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId : fa14705e51bd2ce5
+2019-10-15 13:39:43.539  INFO 11145 --- [main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+2019-10-15 13:39:43.577  INFO 11145 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version : 2.0.1
+2019-10-15 13:39:43.577  INFO 11145 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId : fa14705e51bd2ce5
+2019-10-15 13:39:43.586  INFO 11145 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata        : Cluster ID: 3vqBT9d8SYGubDwc03G1kw
+2019-10-15 13:39:43.589  INFO 11145 --- [main] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2019-10-15 13:39:43.603  INFO 11145 --- [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.offset-changed' has 1 subscriber(s).
+2019-10-15 13:39:43.621  INFO 11145 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-10-15 13:39:43.672  INFO 11145 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-10-15 13:39:43.824  INFO 11145 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-10-15 13:39:43.824  INFO 11145 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-10-15 13:39:43.954  INFO 11145 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-10-15 13:39:43.954  INFO 11145 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-10-15 13:39:44.168  INFO 11145 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 13:39:44.220  INFO 11145 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-10-15 13:39:44.220  INFO 11145 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-10-15 13:39:44.220  INFO 11145 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-10-15 13:39:44.220  INFO 11145 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-10-15 13:39:44.220  INFO 11145 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-10-15 13:39:44.220  INFO 11145 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-10-15 13:39:44.220  INFO 11145 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-10-15 13:39:44.400  INFO 11145 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-10-15 13:39:44.403  INFO 11145 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-10-15 13:39:44.408  INFO 11145 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-10-15 13:39:44.414  INFO 11145 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1571135984413 with initial instances count: 1
+2019-10-15 13:39:44.418  INFO 11145 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application TASKS-RULES with eureka with status UP
+2019-10-15 13:39:44.420  INFO 11145 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1571135984420, current=UP, previous=STARTING]
+2019-10-15 13:39:44.422  INFO 11145 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_TASKS-RULES/192.168.83.11:tasks-rules:8081: registering service...
+2019-10-15 13:39:44.458  INFO 11145 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_TASKS-RULES/192.168.83.11:tasks-rules:8081 - registration status: 204
+2019-10-15 13:39:44.527  INFO 11145 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-10-15 13:39:44.528  INFO 11145 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+2019-10-15 13:39:44.531  INFO 11145 --- [main] c.h.taskstracker.TasksRulesApplication   : Started TasksRulesApplication in 11.726 seconds (JVM running for 12.166)
+2019-10-15 13:41:20.984  INFO 11145 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-15 13:41:20.985  INFO 11145 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-15 13:41:21.046  INFO 11145 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 57 ms
+2019-10-15 13:44:44.223  INFO 11145 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 13:49:44.226  INFO 11145 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 13:54:44.227  INFO 11145 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 13:59:44.231  INFO 11145 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 14:04:44.233  INFO 11145 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 14:09:44.234  INFO 11145 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 14:14:44.235  INFO 11145 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 14:19:44.236  INFO 11145 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 14:24:44.237  INFO 11145 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 14:29:44.237  INFO 11145 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 14:34:44.238  INFO 11145 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 14:39:44.239  INFO 11145 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 14:44:44.240  INFO 11145 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 14:49:44.241  INFO 11145 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 14:54:44.242  INFO 11145 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 14:59:17.181  INFO 16130 --- [main] c.h.taskstracker.TasksRulesApplication   : No active profile set, falling back to default profiles: default
+2019-10-15 14:59:18.213  INFO 16130 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-15 14:59:18.455  INFO 16130 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 233ms. Found 1 repository interfaces.
+2019-10-15 14:59:19.185  INFO 16130 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=b4b3a205-2f65-3f13-848d-25e2d15bcec6
+2019-10-15 14:59:19.277  INFO 16130 --- [main] o.s.c.a.ConfigurationClassEnhancer       : @Bean method BinderFactoryConfiguration.implicitFunctionBinder is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2019-10-15 14:59:19.340  INFO 16130 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-10-15 14:59:19.343  INFO 16130 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-10-15 14:59:19.350  INFO 16130 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-10-15 14:59:19.484  INFO 16130 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$1d803f97] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 14:59:19.518  INFO 16130 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$49ce2e14] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 14:59:19.556  INFO 16130 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 14:59:19.599  INFO 16130 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$b4bfe943] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 14:59:19.613  INFO 16130 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$9051f463] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 14:59:19.624  INFO 16130 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$c9399d30] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 14:59:19.635  INFO 16130 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 14:59:19.658  INFO 16130 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$65e83111] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 14:59:20.018  INFO 16130 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-10-15 14:59:20.101  INFO 16130 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-15 14:59:20.102  INFO 16130 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-10-15 14:59:20.390  INFO 16130 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-15 14:59:20.390  INFO 16130 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3195 ms
+2019-10-15 14:59:20.806  INFO 16130 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-15 14:59:20.989  INFO 16130 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-15 14:59:22.174  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:59:22.186  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:59:22.188  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-10-15 14:59:22.214  INFO 16130 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-10-15 14:59:22.215  INFO 16130 --- [main] liquibase.command.core.DropAllCommand    : Dropping Database Objects in schema: postgres.public
+2019-10-15 14:59:22.258  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-10-15 14:59:22.274  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT c.relname AS SEQUENCE_NAME FROM pg_class c join pg_namespace on c.relnamespace = pg_namespace.oid WHERE c.relkind='S' AND nspname = 'public' AND c.oid not in (select d.objid FROM pg_depend d where d.refobjsubid > 0)
+2019-10-15 14:59:24.247  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : ALTER TABLE "public"."order_rule_items" DROP CONSTRAINT "order_rule_items_order_rule_id_fkey"
+2019-10-15 14:59:24.257  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."order_rule_items" CASCADE
+2019-10-15 14:59:24.299  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."order_rules" CASCADE
+2019-10-15 14:59:24.302  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM "public"."databasechangelog"
+2019-10-15 14:59:24.303  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."databasechangelog"
+2019-10-15 14:59:24.308  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM "public"."databasechangeloglock"
+2019-10-15 14:59:24.309  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."databasechangeloglock"
+2019-10-15 14:59:24.310  INFO 16130 --- [main] l.database.core.PostgresDatabase         : Successfully deleted all supported object types in schema postgres.public.
+2019-10-15 14:59:24.313  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:59:24.317  INFO 16130 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-10-15 14:59:24.318  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:59:24.319  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:59:24.325  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.databasechangeloglock (ID INTEGER NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP WITHOUT TIME ZONE, LOCKEDBY VARCHAR(255), CONSTRAINT DATABASECHANGELOGLOCK_PKEY PRIMARY KEY (ID))
+2019-10-15 14:59:24.377  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:59:24.379  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : DELETE FROM public.databasechangeloglock
+2019-10-15 14:59:24.380  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangeloglock (ID, LOCKED) VALUES (1, FALSE)
+2019-10-15 14:59:24.384  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-10-15 14:59:24.390  INFO 16130 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-10-15 14:59:24.660  INFO 16130 --- [main] l.c.StandardChangeLogHistoryService      : Creating database history table with name: public.databasechangelog
+2019-10-15 14:59:24.661  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.databasechangelog (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP WITHOUT TIME ZONE NOT NULL, ORDEREXECUTED INTEGER NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+2019-10-15 14:59:24.676  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangelog
+2019-10-15 14:59:24.677  INFO 16130 --- [main] l.c.StandardChangeLogHistoryService      : Reading from public.databasechangelog
+2019-10-15 14:59:24.677  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-10-15 14:59:24.679  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:59:24.696  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.order_rules (
+    id uuid PRIMARY KEY,
+    rule_offset integer
+)
+2019-10-15 14:59:24.766  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.order_rule_items (
+    order_rule_id uuid REFERENCES order_rules(id),
+    order_id integer,
+    user_id uuid,
+    out_of_order_occurrences integer,
+    index_id integer,
+    PRIMARY KEY(order_rule_id, order_id)
+)
+2019-10-15 14:59:24.802  INFO 16130 --- [main] liquibase.changelog.ChangeSet            : SQL in file changelog-initial.sql executed
+2019-10-15 14:59:24.805  INFO 16130 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:liquibase/changelog/changelog-initial.xml::changelog-initial::mihai.crac ran successfully in 120ms
+2019-10-15 14:59:24.805  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MAX(ORDEREXECUTED) FROM public.databasechangelog
+2019-10-15 14:59:24.808  INFO 16130 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangelog (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('changelog-initial', 'mihai.crac', 'classpath:liquibase/changelog/changelog-initial.xml', NOW(), 1, '8:ad6e1278a2e0b5ea392790b09f0ca746', 'sqlFile', '', 'EXECUTED', NULL, NULL, '3.6.3', '1140764680')
+2019-10-15 14:59:24.820  INFO 16130 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-10-15 14:59:25.157  INFO 16130 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-10-15 14:59:25.317  INFO 16130 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.11.Final}
+2019-10-15 14:59:25.318  INFO 16130 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-10-15 14:59:25.729  INFO 16130 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-10-15 14:59:26.149  INFO 16130 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-10-15 14:59:26.188  INFO 16130 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
+2019-10-15 14:59:26.193  INFO 16130 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@6af02de0
+2019-10-15 14:59:28.632  INFO 16130 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-10-15 14:59:31.093  WARN 16130 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-10-15 14:59:31.093  INFO 16130 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-10-15 14:59:31.110  WARN 16130 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-10-15 14:59:31.110  INFO 16130 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-10-15 14:59:32.008  INFO 16130 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-15 14:59:32.248  WARN 16130 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-10-15 14:59:35.464  INFO 16130 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-10-15 14:59:36.436  INFO 16130 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
+2019-10-15 14:59:36.676  INFO 16130 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel offset-changed
+2019-10-15 14:59:36.763  INFO 16130 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel nullChannel
+2019-10-15 14:59:36.795  INFO 16130 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler errorLogger
+2019-10-15 14:59:36.893  INFO 16130 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-10-15 14:59:36.894  INFO 16130 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 1 subscriber(s).
+2019-10-15 14:59:36.894  INFO 16130 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started _org.springframework.integration.errorLogger
+2019-10-15 14:59:38.132  INFO 16130 --- [main] o.s.c.s.b.k.p.KafkaTopicProvisioner      : Using kafka topic for outbound: offset-changed
+2019-10-15 14:59:38.144  INFO 16130 --- [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2019-10-15 14:59:38.326  INFO 16130 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version : 2.0.1
+2019-10-15 14:59:38.326  INFO 16130 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId : fa14705e51bd2ce5
+2019-10-15 14:59:39.338  INFO 16130 --- [main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+2019-10-15 14:59:39.601  INFO 16130 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version : 2.0.1
+2019-10-15 14:59:39.601  INFO 16130 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId : fa14705e51bd2ce5
+2019-10-15 14:59:39.621  INFO 16130 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata        : Cluster ID: 3vqBT9d8SYGubDwc03G1kw
+2019-10-15 14:59:39.623  INFO 16130 --- [main] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2019-10-15 14:59:39.659  INFO 16130 --- [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.offset-changed' has 1 subscriber(s).
+2019-10-15 14:59:39.815  INFO 16130 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-10-15 14:59:40.218  INFO 16130 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-10-15 14:59:40.930  INFO 16130 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-10-15 14:59:40.930  INFO 16130 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-10-15 14:59:41.840  INFO 16130 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-10-15 14:59:41.840  INFO 16130 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-10-15 14:59:42.524  INFO 16130 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 14:59:42.638  INFO 16130 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-10-15 14:59:42.638  INFO 16130 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-10-15 14:59:42.638  INFO 16130 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-10-15 14:59:42.638  INFO 16130 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-10-15 14:59:42.638  INFO 16130 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-10-15 14:59:42.638  INFO 16130 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-10-15 14:59:42.638  INFO 16130 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-10-15 14:59:43.375  INFO 16130 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-10-15 14:59:43.387  INFO 16130 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-10-15 14:59:43.404  INFO 16130 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-10-15 14:59:43.414  INFO 16130 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1571140783412 with initial instances count: 1
+2019-10-15 14:59:43.418  INFO 16130 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application TASKS-RULES with eureka with status UP
+2019-10-15 14:59:43.419  INFO 16130 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1571140783419, current=UP, previous=STARTING]
+2019-10-15 14:59:43.442  INFO 16130 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_TASKS-RULES/192.168.83.11:tasks-rules:8081: registering service...
+2019-10-15 14:59:43.536  INFO 16130 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_TASKS-RULES/192.168.83.11:tasks-rules:8081 - registration status: 204
+2019-10-15 14:59:43.624  INFO 16130 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-10-15 14:59:43.627  INFO 16130 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+2019-10-15 14:59:43.707  INFO 16130 --- [main] c.h.taskstracker.TasksRulesApplication   : Started TasksRulesApplication in 29.105 seconds (JVM running for 29.964)
+2019-10-15 15:04:42.641  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:09:42.643  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:14:42.648  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:19:42.652  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:24:42.653  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:29:42.656  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:34:42.660  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:39:42.661  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:44:42.662  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:49:42.663  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:54:42.664  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:59:42.666  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 16:04:42.667  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 16:09:42.668  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 16:14:42.670  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 16:19:42.672  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 16:24:42.674  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 16:29:42.675  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 16:34:42.677  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 16:39:42.678  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 16:44:42.680  INFO 16130 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

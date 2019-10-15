@@ -1,4 +1,220 @@
-2019-10-10 10:48:09.756  INFO 13617 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-10-10 10:48:09.988  INFO 13617 --- [Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-10-10 10:48:10.163  INFO 13617 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-10-10 10:48:10.369  INFO 13617 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-15 14:54:22.615  INFO 15278 --- [main] c.h.t.NotificationsApplication           : No active profile set, falling back to default profiles: default
+2019-10-15 14:54:24.751  INFO 15278 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-15 14:54:24.974  INFO 15278 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 200ms. Found 1 repository interfaces.
+2019-10-15 14:54:25.472  WARN 15278 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-10-15 14:54:26.171  INFO 15278 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ab110ef0-ee8d-37cf-a059-7717f0e3f2b9
+2019-10-15 14:54:26.788  INFO 15278 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$918ddb3c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 14:54:26.881  INFO 15278 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$ada7de39] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 14:54:27.517  INFO 15278 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2019-10-15 14:54:27.603  INFO 15278 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-15 14:54:27.607  INFO 15278 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-10-15 14:54:27.945  INFO 15278 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-15 14:54:27.945  INFO 15278 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5240 ms
+2019-10-15 14:54:28.263  WARN 15278 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-10-15 14:54:28.263  INFO 15278 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-10-15 14:54:28.286  INFO 15278 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@2b90cc1
+2019-10-15 14:54:30.218  INFO 15278 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-15 14:54:30.606  INFO 15278 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-15 14:54:32.066  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:54:32.172  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.databasechangeloglock (ID INTEGER NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP WITHOUT TIME ZONE, LOCKEDBY VARCHAR(255), CONSTRAINT DATABASECHANGELOGLOCK_PKEY PRIMARY KEY (ID))
+2019-10-15 14:54:32.357  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:54:32.407  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : DELETE FROM public.databasechangeloglock
+2019-10-15 14:54:32.409  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangeloglock (ID, LOCKED) VALUES (1, FALSE)
+2019-10-15 14:54:32.449  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-10-15 14:54:32.619  INFO 15278 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-10-15 14:54:32.620  INFO 15278 --- [main] liquibase.command.core.DropAllCommand    : Dropping Database Objects in schema: postgres.public
+2019-10-15 14:54:32.839  INFO 15278 --- [main] l.c.StandardChangeLogHistoryService      : Creating database history table with name: public.databasechangelog
+2019-10-15 14:54:32.846  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.databasechangelog (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP WITHOUT TIME ZONE NOT NULL, ORDEREXECUTED INTEGER NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+2019-10-15 14:54:33.053  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:54:33.112  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT c.relname AS SEQUENCE_NAME FROM pg_class c join pg_namespace on c.relnamespace = pg_namespace.oid WHERE c.relkind='S' AND nspname = 'public' AND c.oid not in (select d.objid FROM pg_depend d where d.refobjsubid > 0)
+2019-10-15 14:54:33.190  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM "public"."databasechangelog"
+2019-10-15 14:54:33.191  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."databasechangelog"
+2019-10-15 14:54:33.211  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM "public"."databasechangeloglock"
+2019-10-15 14:54:33.212  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."databasechangeloglock"
+2019-10-15 14:54:33.213  INFO 15278 --- [main] l.database.core.PostgresDatabase         : Successfully deleted all supported object types in schema postgres.public.
+2019-10-15 14:54:33.289  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:54:33.290  INFO 15278 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-10-15 14:54:33.290  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:54:33.292  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:54:33.293  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.databasechangeloglock (ID INTEGER NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP WITHOUT TIME ZONE, LOCKEDBY VARCHAR(255), CONSTRAINT DATABASECHANGELOGLOCK_PKEY PRIMARY KEY (ID))
+2019-10-15 14:54:33.310  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:54:33.311  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : DELETE FROM public.databasechangeloglock
+2019-10-15 14:54:33.312  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangeloglock (ID, LOCKED) VALUES (1, FALSE)
+2019-10-15 14:54:33.315  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-10-15 14:54:33.318  INFO 15278 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-10-15 14:54:34.739  INFO 15278 --- [main] l.c.StandardChangeLogHistoryService      : Creating database history table with name: public.databasechangelog
+2019-10-15 14:54:34.741  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.databasechangelog (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP WITHOUT TIME ZONE NOT NULL, ORDEREXECUTED INTEGER NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+2019-10-15 14:54:34.818  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangelog
+2019-10-15 14:54:34.819  INFO 15278 --- [main] l.c.StandardChangeLogHistoryService      : Reading from public.databasechangelog
+2019-10-15 14:54:34.820  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-10-15 14:54:34.822  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:54:34.889  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.user_tokens (
+    id uuid PRIMARY KEY,
+    token character varying(255) NOT NULL
+)
+2019-10-15 14:54:34.897  INFO 15278 --- [main] liquibase.changelog.ChangeSet            : SQL in file changelog-initial.sql executed
+2019-10-15 14:54:34.901  INFO 15278 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:liquibase/changelog/changelog-initial.xml::changelog-initial::mihai.crac ran successfully in 23ms
+2019-10-15 14:54:34.902  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MAX(ORDEREXECUTED) FROM public.databasechangelog
+2019-10-15 14:54:34.915  INFO 15278 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangelog (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('changelog-initial', 'mihai.crac', 'classpath:liquibase/changelog/changelog-initial.xml', NOW(), 1, '8:487c2a85b5f3e482537f810af0d6c298', 'sqlFile', '', 'EXECUTED', NULL, NULL, '3.6.3', '1140474822')
+2019-10-15 14:54:34.924  INFO 15278 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-10-15 14:54:35.242  INFO 15278 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-10-15 14:54:35.457  INFO 15278 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.11.Final}
+2019-10-15 14:54:35.458  INFO 15278 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-10-15 14:54:35.853  INFO 15278 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-10-15 14:54:36.141  INFO 15278 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-10-15 14:54:36.162  INFO 15278 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
+2019-10-15 14:54:36.166  INFO 15278 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@55b7f0d
+2019-10-15 14:54:37.613  INFO 15278 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-10-15 14:54:38.722  WARN 15278 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-10-15 14:54:38.722  INFO 15278 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-10-15 14:54:39.016  INFO 15278 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-15 14:54:39.191  WARN 15278 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-10-15 14:54:40.231  INFO 15278 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-10-15 14:54:40.361  INFO 15278 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-10-15 14:54:40.397  INFO 15278 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-10-15 14:54:40.574  INFO 15278 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-10-15 14:54:40.574  INFO 15278 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-10-15 14:54:40.727  INFO 15278 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-10-15 14:54:40.728  INFO 15278 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-10-15 14:54:41.049  INFO 15278 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 14:54:41.136  INFO 15278 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-10-15 14:54:41.136  INFO 15278 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-10-15 14:54:41.136  INFO 15278 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-10-15 14:54:41.136  INFO 15278 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-10-15 14:54:41.136  INFO 15278 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-10-15 14:54:41.136  INFO 15278 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-10-15 14:54:41.136  INFO 15278 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-10-15 14:54:41.306  INFO 15278 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-10-15 14:54:41.311  INFO 15278 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-10-15 14:54:41.314  INFO 15278 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-10-15 14:54:41.333  INFO 15278 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1571140481326 with initial instances count: 2
+2019-10-15 14:54:41.335  INFO 15278 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application NOTIFICATIONS with eureka with status UP
+2019-10-15 14:54:41.336  INFO 15278 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1571140481336, current=UP, previous=STARTING]
+2019-10-15 14:54:41.338  INFO 15278 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_NOTIFICATIONS/192.168.83.11:notifications:8083: registering service...
+2019-10-15 14:54:41.389  INFO 15278 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_NOTIFICATIONS/192.168.83.11:notifications:8083 - registration status: 204
+2019-10-15 14:54:41.485  INFO 15278 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2019-10-15 14:54:41.487  INFO 15278 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8083
+2019-10-15 14:54:41.550  INFO 15278 --- [main] c.h.t.NotificationsApplication           : Started NotificationsApplication in 23.873 seconds (JVM running for 24.963)
+2019-10-15 14:59:01.301  INFO 15278 --- [Thread-6] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application NOTIFICATIONS with eureka with status DOWN
+2019-10-15 14:59:01.301  WARN 15278 --- [Thread-6] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1571140741301, current=DOWN, previous=UP]
+2019-10-15 14:59:01.302  INFO 15278 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_NOTIFICATIONS/192.168.83.11:notifications:8083: registering service...
+2019-10-15 14:59:01.309  INFO 15278 --- [Thread-6] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-15 14:59:01.311  INFO 15278 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-10-15 14:59:01.314  INFO 15278 --- [Thread-6] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2019-10-15 14:59:01.466  INFO 15278 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_NOTIFICATIONS/192.168.83.11:notifications:8083 - registration status: 204
+2019-10-15 14:59:01.467  INFO 15278 --- [Thread-6] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2019-10-15 14:59:42.566  INFO 16350 --- [main] c.h.t.NotificationsApplication           : No active profile set, falling back to default profiles: default
+2019-10-15 14:59:44.364  INFO 16350 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-15 14:59:44.551  INFO 16350 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 177ms. Found 1 repository interfaces.
+2019-10-15 14:59:45.277  INFO 16350 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=2e6b8fa0-e926-34a8-8594-3a2134b99f9d
+2019-10-15 14:59:45.630  INFO 16350 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3645ab6d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 14:59:45.712  INFO 16350 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$525fae6a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-15 14:59:46.261  INFO 16350 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2019-10-15 14:59:46.478  INFO 16350 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-15 14:59:46.482  INFO 16350 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-10-15 14:59:46.866  INFO 16350 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-15 14:59:46.867  INFO 16350 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4245 ms
+2019-10-15 14:59:47.353  INFO 16350 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-15 14:59:47.672  INFO 16350 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-15 14:59:48.929  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:59:48.947  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:59:48.949  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-10-15 14:59:48.984  INFO 16350 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-10-15 14:59:48.985  INFO 16350 --- [main] liquibase.command.core.DropAllCommand    : Dropping Database Objects in schema: postgres.public
+2019-10-15 14:59:49.074  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-10-15 14:59:49.106  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT c.relname AS SEQUENCE_NAME FROM pg_class c join pg_namespace on c.relnamespace = pg_namespace.oid WHERE c.relkind='S' AND nspname = 'public' AND c.oid not in (select d.objid FROM pg_depend d where d.refobjsubid > 0)
+2019-10-15 14:59:50.788  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."user_tokens" CASCADE
+2019-10-15 14:59:50.796  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM "public"."databasechangelog"
+2019-10-15 14:59:50.797  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."databasechangelog"
+2019-10-15 14:59:50.798  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM "public"."databasechangeloglock"
+2019-10-15 14:59:50.799  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."databasechangeloglock"
+2019-10-15 14:59:50.800  INFO 16350 --- [main] l.database.core.PostgresDatabase         : Successfully deleted all supported object types in schema postgres.public.
+2019-10-15 14:59:50.803  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:59:50.811  INFO 16350 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-10-15 14:59:50.812  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:59:50.813  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:59:50.815  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.databasechangeloglock (ID INTEGER NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP WITHOUT TIME ZONE, LOCKEDBY VARCHAR(255), CONSTRAINT DATABASECHANGELOGLOCK_PKEY PRIMARY KEY (ID))
+2019-10-15 14:59:50.847  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:59:50.849  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : DELETE FROM public.databasechangeloglock
+2019-10-15 14:59:50.850  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangeloglock (ID, LOCKED) VALUES (1, FALSE)
+2019-10-15 14:59:50.854  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-10-15 14:59:50.871  INFO 16350 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-10-15 14:59:51.095  INFO 16350 --- [main] l.c.StandardChangeLogHistoryService      : Creating database history table with name: public.databasechangelog
+2019-10-15 14:59:51.111  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.databasechangelog (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP WITHOUT TIME ZONE NOT NULL, ORDEREXECUTED INTEGER NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+2019-10-15 14:59:51.125  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangelog
+2019-10-15 14:59:51.127  INFO 16350 --- [main] l.c.StandardChangeLogHistoryService      : Reading from public.databasechangelog
+2019-10-15 14:59:51.127  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-10-15 14:59:51.128  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-15 14:59:51.163  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.user_tokens (
+    id uuid PRIMARY KEY,
+    token character varying(255) NOT NULL
+)
+2019-10-15 14:59:51.189  INFO 16350 --- [main] liquibase.changelog.ChangeSet            : SQL in file changelog-initial.sql executed
+2019-10-15 14:59:51.192  INFO 16350 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:liquibase/changelog/changelog-initial.xml::changelog-initial::mihai.crac ran successfully in 30ms
+2019-10-15 14:59:51.195  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MAX(ORDEREXECUTED) FROM public.databasechangelog
+2019-10-15 14:59:51.209  INFO 16350 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangelog (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('changelog-initial', 'mihai.crac', 'classpath:liquibase/changelog/changelog-initial.xml', NOW(), 1, '8:487c2a85b5f3e482537f810af0d6c298', 'sqlFile', '', 'EXECUTED', NULL, NULL, '3.6.3', '1140791129')
+2019-10-15 14:59:51.216  INFO 16350 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-10-15 14:59:51.461  INFO 16350 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-10-15 14:59:51.542  INFO 16350 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.11.Final}
+2019-10-15 14:59:51.544  INFO 16350 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-10-15 14:59:51.853  INFO 16350 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-10-15 14:59:52.016  INFO 16350 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-10-15 14:59:52.030  INFO 16350 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
+2019-10-15 14:59:52.034  INFO 16350 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5bfeb9ba
+2019-10-15 14:59:52.624  INFO 16350 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-10-15 14:59:53.160  WARN 16350 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-10-15 14:59:53.160  INFO 16350 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-10-15 14:59:53.166  WARN 16350 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-10-15 14:59:53.166  INFO 16350 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-10-15 14:59:53.415  INFO 16350 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-15 14:59:53.477  WARN 16350 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-10-15 14:59:54.144  INFO 16350 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-10-15 14:59:54.177  INFO 16350 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-10-15 14:59:54.320  INFO 16350 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-10-15 14:59:54.320  INFO 16350 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-10-15 14:59:54.453  INFO 16350 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-10-15 14:59:54.454  INFO 16350 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-10-15 14:59:54.912  INFO 16350 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 14:59:55.108  INFO 16350 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-10-15 14:59:55.109  INFO 16350 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-10-15 14:59:55.109  INFO 16350 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-10-15 14:59:55.109  INFO 16350 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-10-15 14:59:55.110  INFO 16350 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-10-15 14:59:55.110  INFO 16350 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-10-15 14:59:55.110  INFO 16350 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-10-15 14:59:55.272  INFO 16350 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-10-15 14:59:55.276  INFO 16350 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-10-15 14:59:55.279  INFO 16350 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-10-15 14:59:55.294  INFO 16350 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1571140795293 with initial instances count: 1
+2019-10-15 14:59:55.306  INFO 16350 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application NOTIFICATIONS with eureka with status UP
+2019-10-15 14:59:55.308  INFO 16350 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1571140795308, current=UP, previous=STARTING]
+2019-10-15 14:59:55.314  INFO 16350 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_NOTIFICATIONS/192.168.83.11:notifications:8083: registering service...
+2019-10-15 14:59:55.435  INFO 16350 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_NOTIFICATIONS/192.168.83.11:notifications:8083 - registration status: 204
+2019-10-15 14:59:55.458  INFO 16350 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2019-10-15 14:59:55.459  INFO 16350 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8083
+2019-10-15 14:59:55.522  INFO 16350 --- [main] c.h.t.NotificationsApplication           : Started NotificationsApplication in 20.335 seconds (JVM running for 22.642)
+2019-10-15 15:04:55.116  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:09:55.118  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:14:55.125  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:19:55.126  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:24:55.128  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:29:55.129  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:34:55.130  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:39:55.132  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:44:55.132  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:49:55.133  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:54:55.134  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 15:59:55.136  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 16:04:55.138  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 16:09:55.139  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 16:14:55.140  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 16:19:55.142  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 16:24:55.143  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 16:29:55.144  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 16:34:55.145  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 16:39:55.146  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-15 16:44:55.147  INFO 16350 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
