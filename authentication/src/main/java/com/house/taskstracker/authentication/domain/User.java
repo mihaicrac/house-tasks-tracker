@@ -16,7 +16,7 @@ import java.util.UUID;
 
 @Data
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User implements UserDetails {
 
     @Id
@@ -46,7 +46,7 @@ public class User implements UserDetails {
     @Size(min = 4, max = 50)
     private String email;
 
-    @Column(name = "enabled", columnDefinition = "BIT(1)", nullable = false)
+    @Column(name = "enabled", nullable = false)
     private Boolean enabled;
 
     @Override
