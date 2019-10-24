@@ -3003,3 +3003,847 @@ Using generated security password: 0ce80879-3e30-4400-85ef-f07270fe484a
 2019-10-24 14:12:24.528   INFO 20869 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2019-10-24 14:17:24.528   INFO 20869 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2019-10-24 14:22:24.530   INFO 20869 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 14:27:24.532   INFO 20869 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 14:31:59.626   INFO 20869 --- [Thread-7] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application TASKS-RULES with eureka with status DOWN
+2019-10-24 14:31:59.626   WARN 20869 --- [Thread-7] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1571916719626, current=DOWN, previous=UP]
+2019-10-24 14:31:59.626   INFO 20869 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_TASKS-RULES/192.168.83.11:tasks-rules:8081: registering service...
+2019-10-24 14:31:59.632   INFO 20869 --- [Thread-7] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-10-24 14:31:59.633   INFO 20869 --- [Thread-7] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 0 subscriber(s).
+2019-10-24 14:31:59.633   INFO 20869 --- [Thread-7] o.s.i.endpoint.EventDrivenConsumer       : stopped _org.springframework.integration.errorLogger
+2019-10-24 14:31:59.633   INFO 20869 --- [Thread-7] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-10-24 14:31:59.634   INFO 20869 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_TASKS-RULES/192.168.83.11:tasks-rules:8081 - registration status: 204
+2019-10-24 14:31:59.636   INFO 20869 --- [Thread-7] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-24 14:31:59.638   INFO 20869 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-10-24 14:31:59.644   INFO 20869 --- [Thread-7] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: errorChannel
+2019-10-24 14:31:59.645   INFO 20869 --- [Thread-7] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2019-10-24 14:31:59.645   INFO 20869 --- [Thread-7] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: offset-changed
+2019-10-24 14:31:59.645   INFO 20869 --- [Thread-7] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: _org.springframework.integration.errorLogger.handler
+2019-10-24 14:31:59.646   INFO 20869 --- [Thread-7] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2019-10-24 14:32:04.762   INFO 24764 --- [main] c.h.taskstracker.TasksRulesApplication   : No active profile set, falling back to default profiles: default
+2019-10-24 14:32:05.559   INFO 24764 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-24 14:32:05.702   INFO 24764 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 134ms. Found 1 repository interfaces.
+2019-10-24 14:32:06.155   INFO 24764 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ee45103a-37b1-3cb1-bc7a-ee46cade3d8d
+2019-10-24 14:32:06.179   INFO 24764 --- [main] o.s.c.a.ConfigurationClassEnhancer       : @Bean method BinderFactoryConfiguration.implicitFunctionBinder is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2019-10-24 14:32:06.215   INFO 24764 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-10-24 14:32:06.219   INFO 24764 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-10-24 14:32:06.230   INFO 24764 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-10-24 14:32:06.289   INFO 24764 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$8dba3381] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 14:32:06.315   INFO 24764 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ba0821fe] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 14:32:06.337   INFO 24764 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 14:32:06.373   INFO 24764 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$24f9dd2d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 14:32:06.380   INFO 24764 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$8be84d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 14:32:06.390   INFO 24764 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$3973911a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 14:32:06.395   INFO 24764 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 14:32:06.410   INFO 24764 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$d62224fb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 14:32:06.654   INFO 24764 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-10-24 14:32:06.678   INFO 24764 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-24 14:32:06.679   INFO 24764 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-10-24 14:32:06.792   INFO 24764 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-24 14:32:06.793   INFO 24764 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2014 ms
+2019-10-24 14:32:06.860  DEBUG 24764 --- [main] c.h.t.u.MdcLoggingFilterConfiguration$1  : Filter 'mdcLogFilter' configured for use
+2019-10-24 14:32:06.862  DEBUG 24764 --- [main] c.h.t.utils.FiltersConfiguration$1       : Filter 'requestLogFilter' configured for use
+2019-10-24 14:32:06.996   INFO 24764 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-24 14:32:07.157   INFO 24764 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-24 14:32:07.745   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-24 14:32:07.762   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-24 14:32:07.764   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-10-24 14:32:07.780   INFO 24764 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-10-24 14:32:07.780   INFO 24764 --- [main] liquibase.command.core.DropAllCommand    : Dropping Database Objects in schema: postgres.public
+2019-10-24 14:32:07.829   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-10-24 14:32:07.843   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT c.relname AS SEQUENCE_NAME FROM pg_class c join pg_namespace on c.relnamespace = pg_namespace.oid WHERE c.relkind='S' AND nspname = 'public' AND c.oid not in (select d.objid FROM pg_depend d where d.refobjsubid > 0)
+2019-10-24 14:32:08.483   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : ALTER TABLE "public"."order_rule_items" DROP CONSTRAINT "order_rule_items_order_rule_id_fkey"
+2019-10-24 14:32:08.495   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."order_rule_items" CASCADE
+2019-10-24 14:32:08.541   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."order_rules" CASCADE
+2019-10-24 14:32:08.545   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM "public"."databasechangelog"
+2019-10-24 14:32:08.547   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."databasechangelog"
+2019-10-24 14:32:08.548   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM "public"."databasechangeloglock"
+2019-10-24 14:32:08.549   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."databasechangeloglock"
+2019-10-24 14:32:08.549   INFO 24764 --- [main] l.database.core.PostgresDatabase         : Successfully deleted all supported object types in schema postgres.public.
+2019-10-24 14:32:08.552   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-24 14:32:08.557   INFO 24764 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-10-24 14:32:08.558   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-24 14:32:08.559   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-24 14:32:08.562   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.databasechangeloglock (ID INTEGER NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP WITHOUT TIME ZONE, LOCKEDBY VARCHAR(255), CONSTRAINT DATABASECHANGELOGLOCK_PKEY PRIMARY KEY (ID))
+2019-10-24 14:32:08.612   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-24 14:32:08.614   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : DELETE FROM public.databasechangeloglock
+2019-10-24 14:32:08.615   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangeloglock (ID, LOCKED) VALUES (1, FALSE)
+2019-10-24 14:32:08.618   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-10-24 14:32:08.621   INFO 24764 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-10-24 14:32:08.830   INFO 24764 --- [main] l.c.StandardChangeLogHistoryService      : Creating database history table with name: public.databasechangelog
+2019-10-24 14:32:08.831   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.databasechangelog (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP WITHOUT TIME ZONE NOT NULL, ORDEREXECUTED INTEGER NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+2019-10-24 14:32:08.845   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangelog
+2019-10-24 14:32:08.846   INFO 24764 --- [main] l.c.StandardChangeLogHistoryService      : Reading from public.databasechangelog
+2019-10-24 14:32:08.846   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-10-24 14:32:08.848   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-24 14:32:08.862   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.order_rules (
+    id uuid PRIMARY KEY,
+    rule_offset integer
+)
+2019-10-24 14:32:08.869   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.order_rule_items (
+    order_rule_id uuid REFERENCES order_rules(id),
+    order_id integer,
+    user_id uuid,
+    out_of_order_occurrences integer,
+    index_id integer,
+    PRIMARY KEY(order_rule_id, order_id)
+)
+2019-10-24 14:32:08.889   INFO 24764 --- [main] liquibase.changelog.ChangeSet            : SQL in file changelog-initial.sql executed
+2019-10-24 14:32:08.891   INFO 24764 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:liquibase/changelog/changelog-initial.xml::changelog-initial::mihai.crac ran successfully in 33ms
+2019-10-24 14:32:08.892   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MAX(ORDEREXECUTED) FROM public.databasechangelog
+2019-10-24 14:32:08.896   INFO 24764 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangelog (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('changelog-initial', 'mihai.crac', 'classpath:liquibase/changelog/changelog-initial.xml', NOW(), 1, '8:ad6e1278a2e0b5ea392790b09f0ca746', 'sqlFile', '', 'EXECUTED', NULL, NULL, '3.6.3', '1916728849')
+2019-10-24 14:32:08.907   INFO 24764 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-10-24 14:32:09.023   INFO 24764 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-10-24 14:32:09.102   INFO 24764 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.11.Final}
+2019-10-24 14:32:09.104   INFO 24764 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-10-24 14:32:09.260   INFO 24764 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-10-24 14:32:09.375   INFO 24764 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-10-24 14:32:09.386   INFO 24764 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
+2019-10-24 14:32:09.390   INFO 24764 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@4ceb368b
+2019-10-24 14:32:10.016   INFO 24764 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-10-24 14:32:10.647   WARN 24764 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-10-24 14:32:10.647   INFO 24764 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-10-24 14:32:10.652   WARN 24764 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-10-24 14:32:10.653   INFO 24764 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-10-24 14:32:10.804   INFO 24764 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-24 14:32:10.853   WARN 24764 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-10-24 14:32:11.156   INFO 24764 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: b5776e46-b55f-49be-96a1-7355d598dbea
+
+2019-10-24 14:32:11.385   INFO 24764 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3963d003, org.springframework.security.web.context.SecurityContextPersistenceFilter@768dcd21, org.springframework.security.web.header.HeaderWriterFilter@8611b3f, org.springframework.security.web.authentication.logout.LogoutFilter@57e273e0, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@5d81bc79, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1582dfec, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7f55e1b9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41e35358, org.springframework.security.web.session.SessionManagementFilter@4b9be679, org.springframework.security.web.access.ExceptionTranslationFilter@4f34f451, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1a8b10dd]
+2019-10-24 14:32:11.658   INFO 24764 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-10-24 14:32:11.795   INFO 24764 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel offset-changed
+2019-10-24 14:32:11.831   INFO 24764 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
+2019-10-24 14:32:11.878   INFO 24764 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel nullChannel
+2019-10-24 14:32:11.894   INFO 24764 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler errorLogger
+2019-10-24 14:32:11.924   INFO 24764 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-10-24 14:32:11.925   INFO 24764 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 1 subscriber(s).
+2019-10-24 14:32:11.925   INFO 24764 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started _org.springframework.integration.errorLogger
+2019-10-24 14:32:12.237   INFO 24764 --- [main] o.s.c.s.b.k.p.KafkaTopicProvisioner      : Using kafka topic for outbound: offset-changed
+2019-10-24 14:32:12.243   INFO 24764 --- [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2019-10-24 14:32:12.286   INFO 24764 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version : 2.0.1
+2019-10-24 14:32:12.286   INFO 24764 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId : fa14705e51bd2ce5
+2019-10-24 14:32:12.722   INFO 24764 --- [main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+2019-10-24 14:32:12.747   INFO 24764 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version : 2.0.1
+2019-10-24 14:32:12.747   INFO 24764 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId : fa14705e51bd2ce5
+2019-10-24 14:32:12.769   INFO 24764 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata        : Cluster ID: 3vqBT9d8SYGubDwc03G1kw
+2019-10-24 14:32:12.770   INFO 24764 --- [main] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2019-10-24 14:32:12.782   INFO 24764 --- [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.offset-changed' has 1 subscriber(s).
+2019-10-24 14:32:12.795   INFO 24764 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-10-24 14:32:12.847   INFO 24764 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-10-24 14:32:13.097   INFO 24764 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-10-24 14:32:13.097   INFO 24764 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-10-24 14:32:13.366   INFO 24764 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-10-24 14:32:13.367   INFO 24764 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-10-24 14:32:13.491   INFO 24764 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 14:32:13.514   INFO 24764 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-10-24 14:32:13.514   INFO 24764 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-10-24 14:32:13.514   INFO 24764 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-10-24 14:32:13.514   INFO 24764 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-10-24 14:32:13.514   INFO 24764 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-10-24 14:32:13.514   INFO 24764 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-10-24 14:32:13.514   INFO 24764 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-10-24 14:32:13.691   INFO 24764 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-10-24 14:32:13.694   INFO 24764 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-10-24 14:32:13.700   INFO 24764 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-10-24 14:32:13.706   INFO 24764 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1571916733705 with initial instances count: 3
+2019-10-24 14:32:13.708   INFO 24764 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application TASKS-RULES with eureka with status UP
+2019-10-24 14:32:13.709   INFO 24764 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1571916733709, current=UP, previous=STARTING]
+2019-10-24 14:32:13.713   INFO 24764 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_TASKS-RULES/192.168.83.11:tasks-rules:8081: registering service...
+2019-10-24 14:32:13.772   INFO 24764 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_TASKS-RULES/192.168.83.11:tasks-rules:8081 - registration status: 204
+2019-10-24 14:32:13.865   INFO 24764 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-10-24 14:32:13.866   INFO 24764 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+2019-10-24 14:32:13.868   INFO 24764 --- [main] c.h.taskstracker.TasksRulesApplication   : Started TasksRulesApplication in 11.396 seconds (JVM running for 11.855)
+2019-10-24 14:33:18.788   INFO 24764 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-24 14:33:18.788   INFO 24764 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-24 14:33:18.824   INFO 24764 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 36 ms
+2019-10-24 14:33:18.886  DEBUG 24764 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2019-10-24 14:33:18.889  DEBUG 24764 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2019-10-24 14:33:18.904  DEBUG 24764 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2019-10-24 14:33:18.924  DEBUG 24764 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2019-10-24 14:33:18.924  DEBUG 24764 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 5 of 11 in additional filter chain; firing Filter: 'OAuth2AuthenticationProcessingFilter'
+2019-10-24 14:33:18.962   WARN 24764 --- [http-nio-8081-exec-1] o.s.s.o.p.token.RemoteTokenServices      : Null Client ID or Client Secret detected. Endpoint that requires authentication will reject request with 401 error.
+2019-10-24 14:33:19.143  DEBUG 24764 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2019-10-24 14:33:19.143  DEBUG 24764 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2019-10-24 14:33:19.154  DEBUG 24764 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2019-10-24 14:33:19.154  DEBUG 24764 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2019-10-24 14:33:19.154  DEBUG 24764 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2019-10-24 14:33:19.154  DEBUG 24764 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2019-10-24 14:33:19.180  DEBUG 24764 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ reached end of additional filter chain; proceeding with original chain
+2019-10-24 14:33:19.181  DEBUG 24764 --- [http-nio-8081-exec-1] c.h.t.utils.UserContextFilter            : UserContextFilter Correlation id: 9799c930-f048-4cc9-97ad-2f6ad971c762
+2019-10-24 14:33:19.630  DEBUG 24764 --- [http-nio-8081-exec-1] c.h.t.utils.FiltersConfiguration$1       : After request [uri=/order-rules/;client=192.168.83.11;user=mihaicrac;headers=[authorization:"Bearer b06e0314-e67c-4062-9983-8a4904fa3164", user-agent:"PostmanRuntime/7.15.2", accept:"*/*", cache-control:"no-cache", postman-token:"5b7bc29b-33c3-4088-9b41-e2fc809b4e73", accept-encoding:"gzip, deflate", tmx-correlation-id:"9799c930-f048-4cc9-97ad-2f6ad971c762", x-forwarded-host:"localhost:5555", x-forwarded-proto:"http", x-forwarded-prefix:"/api/tasks-rules", x-forwarded-port:"5555", x-forwarded-for:"0:0:0:0:0:0:0:1", content-length:"204", host:"192.168.83.11:8081", connection:"Keep-Alive", Content-Type:"application/json;charset=UTF-8"]]
+2019-10-24 14:33:27.237  DEBUG 24764 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : /order-rules/ at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2019-10-24 14:33:27.237  DEBUG 24764 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : /order-rules/ at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2019-10-24 14:33:27.237  DEBUG 24764 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : /order-rules/ at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2019-10-24 14:33:27.237  DEBUG 24764 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : /order-rules/ at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2019-10-24 14:33:27.237  DEBUG 24764 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : /order-rules/ at position 5 of 11 in additional filter chain; firing Filter: 'OAuth2AuthenticationProcessingFilter'
+2019-10-24 14:33:27.237   WARN 24764 --- [http-nio-8081-exec-2] o.s.s.o.p.token.RemoteTokenServices      : Null Client ID or Client Secret detected. Endpoint that requires authentication will reject request with 401 error.
+2019-10-24 14:33:31.759  DEBUG 24764 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : /order-rules/ at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2019-10-24 14:33:31.760  DEBUG 24764 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : /order-rules/ at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2019-10-24 14:33:31.760  DEBUG 24764 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : /order-rules/ at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2019-10-24 14:33:31.760  DEBUG 24764 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : /order-rules/ at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2019-10-24 14:33:31.760  DEBUG 24764 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : /order-rules/ at position 5 of 11 in additional filter chain; firing Filter: 'OAuth2AuthenticationProcessingFilter'
+2019-10-24 14:33:31.760   WARN 24764 --- [http-nio-8081-exec-3] o.s.s.o.p.token.RemoteTokenServices      : Null Client ID or Client Secret detected. Endpoint that requires authentication will reject request with 401 error.
+2019-10-24 14:33:31.766  DEBUG 24764 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : /order-rules/ at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2019-10-24 14:33:31.767  DEBUG 24764 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : /order-rules/ at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2019-10-24 14:33:31.767  DEBUG 24764 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : /order-rules/ at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2019-10-24 14:33:31.767  DEBUG 24764 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : /order-rules/ at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2019-10-24 14:33:31.767  DEBUG 24764 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : /order-rules/ at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2019-10-24 14:33:31.768  DEBUG 24764 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : /order-rules/ at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2019-10-24 14:33:31.769  DEBUG 24764 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : /order-rules/ reached end of additional filter chain; proceeding with original chain
+2019-10-24 14:33:31.769  DEBUG 24764 --- [http-nio-8081-exec-3] c.h.t.utils.UserContextFilter            : UserContextFilter Correlation id: 8aaf753f-6ee5-4c7a-8c26-7390b0547b72
+2019-10-24 14:33:31.787  DEBUG 24764 --- [http-nio-8081-exec-3] c.h.t.utils.FiltersConfiguration$1       : After request [uri=/order-rules/;client=192.168.83.11;user=mihaicrac;headers=[authorization:"Bearer b06e0314-e67c-4062-9983-8a4904fa3164", user-agent:"PostmanRuntime/7.15.2", accept:"*/*", cache-control:"no-cache", postman-token:"0666a4c7-b190-41ed-bae5-944d6fae33f8", accept-encoding:"gzip, deflate", tmx-correlation-id:"8aaf753f-6ee5-4c7a-8c26-7390b0547b72", x-forwarded-host:"localhost:5555", x-forwarded-proto:"http", x-forwarded-prefix:"/api/tasks-rules", x-forwarded-port:"5555", x-forwarded-for:"0:0:0:0:0:0:0:1", content-length:"204", host:"192.168.83.11:8081", connection:"Keep-Alive", Content-Type:"application/json;charset=UTF-8"]]
+2019-10-24 14:33:35.420  DEBUG 24764 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2019-10-24 14:33:35.420  DEBUG 24764 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2019-10-24 14:33:35.420  DEBUG 24764 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2019-10-24 14:33:35.420  DEBUG 24764 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2019-10-24 14:33:35.420  DEBUG 24764 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 5 of 11 in additional filter chain; firing Filter: 'OAuth2AuthenticationProcessingFilter'
+2019-10-24 14:33:35.420   WARN 24764 --- [http-nio-8081-exec-4] o.s.s.o.p.token.RemoteTokenServices      : Null Client ID or Client Secret detected. Endpoint that requires authentication will reject request with 401 error.
+2019-10-24 14:33:35.425  DEBUG 24764 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2019-10-24 14:33:35.425  DEBUG 24764 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2019-10-24 14:33:35.425  DEBUG 24764 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2019-10-24 14:33:35.425  DEBUG 24764 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2019-10-24 14:33:35.425  DEBUG 24764 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2019-10-24 14:33:35.425  DEBUG 24764 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2019-10-24 14:33:35.425  DEBUG 24764 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ reached end of additional filter chain; proceeding with original chain
+2019-10-24 14:33:35.425  DEBUG 24764 --- [http-nio-8081-exec-4] c.h.t.utils.UserContextFilter            : UserContextFilter Correlation id: 9cc159a9-7428-4a54-b80c-ddfc29c24c77
+2019-10-24 14:33:35.446  DEBUG 24764 --- [http-nio-8081-exec-4] c.h.t.utils.FiltersConfiguration$1       : After request [uri=/order-rules/;client=192.168.83.11;user=mihaicrac;headers=[authorization:"Bearer b06e0314-e67c-4062-9983-8a4904fa3164", user-agent:"PostmanRuntime/7.15.2", accept:"*/*", cache-control:"no-cache", postman-token:"722fa567-723d-4c46-b18c-a9b9b8024e91", accept-encoding:"gzip, deflate", tmx-correlation-id:"9cc159a9-7428-4a54-b80c-ddfc29c24c77", x-forwarded-host:"localhost:5555", x-forwarded-proto:"http", x-forwarded-prefix:"/api/tasks-rules", x-forwarded-port:"5555", x-forwarded-for:"0:0:0:0:0:0:0:1", content-length:"204", host:"192.168.83.11:8081", connection:"Keep-Alive", Content-Type:"application/json;charset=UTF-8"]]
+2019-10-24 14:37:13.517   INFO 24764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 14:42:13.517   INFO 24764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 14:47:13.518   INFO 24764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 14:52:13.521   INFO 24764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 14:57:13.523   INFO 24764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 15:02:13.524   INFO 24764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 15:07:13.524   INFO 24764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 15:12:13.525   INFO 24764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 15:17:13.529   INFO 24764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 15:22:13.531   INFO 24764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 15:27:13.535   INFO 24764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 15:32:13.536   INFO 24764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 15:37:13.537   INFO 24764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 15:37:50.482   INFO 24764 --- [Thread-7] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application TASKS-RULES with eureka with status DOWN
+2019-10-24 15:37:50.482   WARN 24764 --- [Thread-7] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1571920670482, current=DOWN, previous=UP]
+2019-10-24 15:37:50.482   INFO 24764 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_TASKS-RULES/192.168.83.11:tasks-rules:8081: registering service...
+2019-10-24 15:37:50.489   INFO 24764 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_TASKS-RULES/192.168.83.11:tasks-rules:8081 - registration status: 204
+2019-10-24 15:37:50.497   INFO 24764 --- [Thread-7] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-10-24 15:37:50.497   INFO 24764 --- [Thread-7] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 0 subscriber(s).
+2019-10-24 15:37:50.497   INFO 24764 --- [Thread-7] o.s.i.endpoint.EventDrivenConsumer       : stopped _org.springframework.integration.errorLogger
+2019-10-24 15:37:50.497   INFO 24764 --- [Thread-7] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-10-24 15:37:50.500   INFO 24764 --- [Thread-7] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-24 15:37:50.505   INFO 24764 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-10-24 15:37:50.513   INFO 24764 --- [Thread-7] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: offset-changed
+2019-10-24 15:37:50.513   INFO 24764 --- [Thread-7] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: errorChannel
+2019-10-24 15:37:50.514   INFO 24764 --- [Thread-7] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2019-10-24 15:37:50.514   INFO 24764 --- [Thread-7] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: _org.springframework.integration.errorLogger.handler
+2019-10-24 15:37:50.514   INFO 24764 --- [Thread-7] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2019-10-24 15:37:53.516   INFO 24764 --- [Thread-7] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2019-10-24 15:37:53.534  ERROR 24764 --- [Thread-7] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.delete(WebResource.java:591) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.cancel(AbstractJerseyEurekaHttpClient.java:76) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:89) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:941) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:919) ~[eureka-client-1.9.13.jar:1.9.13]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:363) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:321) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:156) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:242) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:235) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:403) ~[spring-cloud-context-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:142) ~[spring-cloud-context-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:258) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1036) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1029) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1057) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1026) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:945) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.9.jar:4.5.9]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	... 41 common frames omitted
+
+2019-10-24 15:37:53.536   WARN 24764 --- [Thread-7] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
+2019-10-24 15:37:53.555  ERROR 24764 --- [Thread-7] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.delete(WebResource.java:591) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.cancel(AbstractJerseyEurekaHttpClient.java:76) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:941) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:919) ~[eureka-client-1.9.13.jar:1.9.13]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:363) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:321) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:156) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:242) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:235) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:403) ~[spring-cloud-context-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:142) ~[spring-cloud-context-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:258) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1036) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1029) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1057) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1026) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:945) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.9.jar:4.5.9]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	... 42 common frames omitted
+
+2019-10-24 15:37:53.557   WARN 24764 --- [Thread-7] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
+2019-10-24 15:37:53.558  ERROR 24764 --- [Thread-7] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_TASKS-RULES/192.168.83.11:tasks-rules:8081 - de-registration failedCannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:941) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:919) ~[eureka-client-1.9.13.jar:1.9.13]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:363) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:321) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:156) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:242) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:235) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:403) ~[spring-cloud-context-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:142) ~[spring-cloud-context-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:258) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1036) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1029) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1057) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1026) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:945) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+
+2019-10-24 15:37:53.578   INFO 24764 --- [Thread-7] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2019-10-24 15:37:53.578   INFO 24764 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-24 15:37:53.592   INFO 24764 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-24 15:43:56.605   INFO 29678 --- [main] c.h.taskstracker.TasksRulesApplication   : No active profile set, falling back to default profiles: default
+2019-10-24 15:43:57.392   INFO 29678 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-24 15:43:57.537   INFO 29678 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 136ms. Found 1 repository interfaces.
+2019-10-24 15:43:58.039   INFO 29678 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=bdb7c3e2-4391-3d11-ac57-bdab72299579
+2019-10-24 15:43:58.061   INFO 29678 --- [main] o.s.c.a.ConfigurationClassEnhancer       : @Bean method BinderFactoryConfiguration.implicitFunctionBinder is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2019-10-24 15:43:58.095   INFO 29678 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-10-24 15:43:58.099   INFO 29678 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-10-24 15:43:58.108   INFO 29678 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-10-24 15:43:58.163   INFO 29678 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$84d8cc50] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 15:43:58.193   INFO 29678 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b126bacd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 15:43:58.215   INFO 29678 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 15:43:58.250   INFO 29678 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$1c1875fc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 15:43:58.258   INFO 29678 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$f7aa811c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 15:43:58.269   INFO 29678 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$309229e9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 15:43:58.275   INFO 29678 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 15:43:58.284   INFO 29678 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cd40bdca] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 15:43:58.585   INFO 29678 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-10-24 15:43:58.614   INFO 29678 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-24 15:43:58.614   INFO 29678 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-10-24 15:43:58.757   INFO 29678 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-24 15:43:58.757   INFO 29678 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2129 ms
+2019-10-24 15:43:58.828  DEBUG 29678 --- [main] c.h.t.u.MdcLoggingFilterConfiguration$1  : Filter 'mdcLogFilter' configured for use
+2019-10-24 15:43:58.828  DEBUG 29678 --- [main] c.h.t.utils.FiltersConfiguration$1       : Filter 'requestLogFilter' configured for use
+2019-10-24 15:43:58.964   INFO 29678 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-24 15:43:59.177   INFO 29678 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-24 15:43:59.725   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-24 15:43:59.738   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-24 15:43:59.740   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-10-24 15:43:59.755   INFO 29678 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-10-24 15:43:59.755   INFO 29678 --- [main] liquibase.command.core.DropAllCommand    : Dropping Database Objects in schema: postgres.public
+2019-10-24 15:43:59.797   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-10-24 15:43:59.809   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT c.relname AS SEQUENCE_NAME FROM pg_class c join pg_namespace on c.relnamespace = pg_namespace.oid WHERE c.relkind='S' AND nspname = 'public' AND c.oid not in (select d.objid FROM pg_depend d where d.refobjsubid > 0)
+2019-10-24 15:44:00.804   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : ALTER TABLE "public"."order_rule_items" DROP CONSTRAINT "order_rule_items_order_rule_id_fkey"
+2019-10-24 15:44:00.860   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."order_rule_items" CASCADE
+2019-10-24 15:44:01.500   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."order_rules" CASCADE
+2019-10-24 15:44:01.503   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM "public"."databasechangelog"
+2019-10-24 15:44:01.504   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."databasechangelog"
+2019-10-24 15:44:01.545   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM "public"."databasechangeloglock"
+2019-10-24 15:44:01.547   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : DROP TABLE "public"."databasechangeloglock"
+2019-10-24 15:44:01.772   INFO 29678 --- [main] l.database.core.PostgresDatabase         : Successfully deleted all supported object types in schema postgres.public.
+2019-10-24 15:44:01.859   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-24 15:44:02.457   INFO 29678 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-10-24 15:44:02.459   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-24 15:44:02.931   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-24 15:44:02.939   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.databasechangeloglock (ID INTEGER NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP WITHOUT TIME ZONE, LOCKEDBY VARCHAR(255), CONSTRAINT DATABASECHANGELOGLOCK_PKEY PRIMARY KEY (ID))
+2019-10-24 15:44:02.975   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-24 15:44:02.977   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : DELETE FROM public.databasechangeloglock
+2019-10-24 15:44:02.977   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangeloglock (ID, LOCKED) VALUES (1, FALSE)
+2019-10-24 15:44:02.980   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-10-24 15:44:02.984   INFO 29678 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-10-24 15:44:03.146   INFO 29678 --- [main] l.c.StandardChangeLogHistoryService      : Creating database history table with name: public.databasechangelog
+2019-10-24 15:44:03.147   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.databasechangelog (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP WITHOUT TIME ZONE NOT NULL, ORDEREXECUTED INTEGER NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+2019-10-24 15:44:03.202   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangelog
+2019-10-24 15:44:03.203   INFO 29678 --- [main] l.c.StandardChangeLogHistoryService      : Reading from public.databasechangelog
+2019-10-24 15:44:03.204   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-10-24 15:44:03.206   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2019-10-24 15:44:03.224   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.order_rules (
+    id uuid PRIMARY KEY,
+    rule_offset integer
+)
+2019-10-24 15:44:03.245   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.order_rule_items (
+    order_rule_id uuid REFERENCES order_rules(id),
+    order_id integer,
+    user_id uuid,
+    out_of_order_occurrences integer,
+    index_id integer,
+    PRIMARY KEY(order_rule_id, order_id)
+)
+2019-10-24 15:44:03.264   INFO 29678 --- [main] liquibase.changelog.ChangeSet            : SQL in file changelog-initial.sql executed
+2019-10-24 15:44:03.267   INFO 29678 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:liquibase/changelog/changelog-initial.xml::changelog-initial::mihai.crac ran successfully in 47ms
+2019-10-24 15:44:03.268   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MAX(ORDEREXECUTED) FROM public.databasechangelog
+2019-10-24 15:44:03.279   INFO 29678 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangelog (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('changelog-initial', 'mihai.crac', 'classpath:liquibase/changelog/changelog-initial.xml', NOW(), 1, '8:ad6e1278a2e0b5ea392790b09f0ca746', 'sqlFile', '', 'EXECUTED', NULL, NULL, '3.6.3', '1921043207')
+2019-10-24 15:44:03.290   INFO 29678 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-10-24 15:44:03.426   INFO 29678 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-10-24 15:44:03.514   INFO 29678 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.11.Final}
+2019-10-24 15:44:03.515   INFO 29678 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-10-24 15:44:03.799   INFO 29678 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-10-24 15:44:03.985   INFO 29678 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-10-24 15:44:03.997   INFO 29678 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
+2019-10-24 15:44:04.001   INFO 29678 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@38276668
+2019-10-24 15:44:04.605   INFO 29678 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-10-24 15:44:05.224   WARN 29678 --- [main] o.s.s.o.p.t.s.JwtAccessTokenConverter    : Unable to create an RSA verifier from verifierKey (ignoreable if using MAC)
+2019-10-24 15:44:05.338   WARN 29678 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-10-24 15:44:05.338   INFO 29678 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-10-24 15:44:05.346   WARN 29678 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-10-24 15:44:05.346   INFO 29678 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-10-24 15:44:05.612   INFO 29678 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-24 15:44:05.671   WARN 29678 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-10-24 15:44:06.022   INFO 29678 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 1b0f203d-a7ae-4aca-a7c9-06ca6f24bbfe
+
+2019-10-24 15:44:06.394   INFO 29678 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@a308ffd, org.springframework.security.web.context.SecurityContextPersistenceFilter@2158d1d1, org.springframework.security.web.header.HeaderWriterFilter@35b799c0, org.springframework.security.web.authentication.logout.LogoutFilter@153f6a67, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@5c00b341, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7e32261f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@78c7d992, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@36e8e3e1, org.springframework.security.web.session.SessionManagementFilter@5513982, org.springframework.security.web.access.ExceptionTranslationFilter@39d8240b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@626e3b18]
+2019-10-24 15:44:06.746   INFO 29678 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-10-24 15:44:06.969   INFO 29678 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel nullChannel
+2019-10-24 15:44:06.989   INFO 29678 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel offset-changed
+2019-10-24 15:44:07.025   INFO 29678 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
+2019-10-24 15:44:07.053   INFO 29678 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler errorLogger
+2019-10-24 15:44:07.077   INFO 29678 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-10-24 15:44:07.077   INFO 29678 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 1 subscriber(s).
+2019-10-24 15:44:07.077   INFO 29678 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started _org.springframework.integration.errorLogger
+2019-10-24 15:44:07.388   INFO 29678 --- [main] o.s.c.s.b.k.p.KafkaTopicProvisioner      : Using kafka topic for outbound: offset-changed
+2019-10-24 15:44:07.392   INFO 29678 --- [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2019-10-24 15:44:07.438   INFO 29678 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version : 2.0.1
+2019-10-24 15:44:07.438   INFO 29678 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId : fa14705e51bd2ce5
+2019-10-24 15:44:07.971   INFO 29678 --- [main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+2019-10-24 15:44:08.007   INFO 29678 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version : 2.0.1
+2019-10-24 15:44:08.007   INFO 29678 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId : fa14705e51bd2ce5
+2019-10-24 15:44:08.049   INFO 29678 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata        : Cluster ID: 3vqBT9d8SYGubDwc03G1kw
+2019-10-24 15:44:08.051   INFO 29678 --- [main] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2019-10-24 15:44:08.134   INFO 29678 --- [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.offset-changed' has 1 subscriber(s).
+2019-10-24 15:44:08.220   INFO 29678 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-10-24 15:44:08.366   INFO 29678 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-10-24 15:44:08.606   INFO 29678 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-10-24 15:44:08.607   INFO 29678 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-10-24 15:44:08.785   INFO 29678 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-10-24 15:44:08.786   INFO 29678 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-10-24 15:44:09.016   INFO 29678 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 15:44:09.044   INFO 29678 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-10-24 15:44:09.044   INFO 29678 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-10-24 15:44:09.044   INFO 29678 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-10-24 15:44:09.044   INFO 29678 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-10-24 15:44:09.044   INFO 29678 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-10-24 15:44:09.044   INFO 29678 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-10-24 15:44:09.044   INFO 29678 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-10-24 15:44:09.191   INFO 29678 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-10-24 15:44:09.194   INFO 29678 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-10-24 15:44:09.200   INFO 29678 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-10-24 15:44:09.205   INFO 29678 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1571921049203 with initial instances count: 1
+2019-10-24 15:44:09.208   INFO 29678 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application TASKS-RULES with eureka with status UP
+2019-10-24 15:44:09.208   INFO 29678 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1571921049208, current=UP, previous=STARTING]
+2019-10-24 15:44:09.209   INFO 29678 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_TASKS-RULES/192.168.83.11:tasks-rules:8081: registering service...
+2019-10-24 15:44:09.255   INFO 29678 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_TASKS-RULES/192.168.83.11:tasks-rules:8081 - registration status: 204
+2019-10-24 15:44:09.305   INFO 29678 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-10-24 15:44:09.305   INFO 29678 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+2019-10-24 15:44:09.309   INFO 29678 --- [main] c.h.taskstracker.TasksRulesApplication   : Started TasksRulesApplication in 15.063 seconds (JVM running for 15.493)
+2019-10-24 15:45:20.544   INFO 29678 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-24 15:45:20.547   INFO 29678 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-24 15:45:20.583   INFO 29678 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 34 ms
+2019-10-24 15:45:20.638  DEBUG 29678 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2019-10-24 15:45:20.644  DEBUG 29678 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2019-10-24 15:45:20.671  DEBUG 29678 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2019-10-24 15:45:20.678  DEBUG 29678 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2019-10-24 15:45:20.678  DEBUG 29678 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 5 of 11 in additional filter chain; firing Filter: 'OAuth2AuthenticationProcessingFilter'
+2019-10-24 15:45:20.747  DEBUG 29678 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2019-10-24 15:45:20.747  DEBUG 29678 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2019-10-24 15:45:20.754  DEBUG 29678 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2019-10-24 15:45:20.755  DEBUG 29678 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2019-10-24 15:45:20.755  DEBUG 29678 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2019-10-24 15:45:20.756  DEBUG 29678 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2019-10-24 15:45:20.768  DEBUG 29678 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : /order-rules/ reached end of additional filter chain; proceeding with original chain
+2019-10-24 15:45:20.772  DEBUG 29678 --- [http-nio-8081-exec-1] c.h.t.utils.UserContextFilter            : UserContextFilter Correlation id: 6b745bba-4e76-45c4-9730-85d2e9579d4b
+2019-10-24 15:45:21.499  DEBUG 29678 --- [http-nio-8081-exec-1] c.h.t.utils.FiltersConfiguration$1       : After request [uri=/order-rules/;client=192.168.83.11;user=mihaicrac;headers=[user-agent:"PostmanRuntime/7.15.2", accept:"*/*", cache-control:"no-cache", postman-token:"3d1a0eb6-4915-4bef-9599-7032a286df17", accept-encoding:"gzip, deflate", tmx-correlation-id:"6b745bba-4e76-45c4-9730-85d2e9579d4b", x-forwarded-host:"localhost:5555", x-forwarded-proto:"http", x-forwarded-prefix:"/api/tasks-rules", x-forwarded-port:"5555", x-forwarded-for:"0:0:0:0:0:0:0:1", content-length:"204", host:"192.168.83.11:8081", connection:"Keep-Alive", Content-Type:"application/json;charset=UTF-8", Authorization:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzE5NjM5MjksInVzZXJJZCI6IjY3MTk0YzE5LWNiZDMtNGJhZC1iNTdiLTIxZDQwN2I4ZmM4ZCIsInVzZXJfbmFtZSI6Im1paGFpY3JhYyIsImp0aSI6Ijk2YTYzYjAyLTg4YjEtNDc2My1iOTdiLWZiZTY2MjI2NmEyNSIsImNsaWVudF9pZCI6ImFuZHJvaWQtaG91c2UtdGFza3MtdHJhY2tlciIsInNjb3BlIjpbIndlYmNsaWVudCJdfQ"]]
+2019-10-24 15:45:32.511  DEBUG 29678 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : /order-rules/ at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2019-10-24 15:45:32.511  DEBUG 29678 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : /order-rules/ at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2019-10-24 15:45:32.511  DEBUG 29678 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : /order-rules/ at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2019-10-24 15:45:32.511  DEBUG 29678 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : /order-rules/ at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2019-10-24 15:45:32.511  DEBUG 29678 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : /order-rules/ at position 5 of 11 in additional filter chain; firing Filter: 'OAuth2AuthenticationProcessingFilter'
+2019-10-24 15:45:32.514  DEBUG 29678 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : /order-rules/ at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2019-10-24 15:45:32.514  DEBUG 29678 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : /order-rules/ at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2019-10-24 15:45:32.514  DEBUG 29678 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : /order-rules/ at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2019-10-24 15:45:32.514  DEBUG 29678 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : /order-rules/ at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2019-10-24 15:45:32.515  DEBUG 29678 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : /order-rules/ at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2019-10-24 15:45:32.515  DEBUG 29678 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : /order-rules/ at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2019-10-24 15:45:32.515  DEBUG 29678 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : /order-rules/ reached end of additional filter chain; proceeding with original chain
+2019-10-24 15:45:32.515  DEBUG 29678 --- [http-nio-8081-exec-2] c.h.t.utils.UserContextFilter            : UserContextFilter Correlation id: 1337552d-b905-4b95-8fd6-da82fea13ae6
+2019-10-24 15:45:32.530  DEBUG 29678 --- [http-nio-8081-exec-2] c.h.t.utils.FiltersConfiguration$1       : After request [uri=/order-rules/;client=192.168.83.11;user=mihaicrac;headers=[user-agent:"PostmanRuntime/7.15.2", accept:"*/*", cache-control:"no-cache", postman-token:"a303a3b1-e09c-47c5-80c9-66a926cf0f0c", accept-encoding:"gzip, deflate", tmx-correlation-id:"1337552d-b905-4b95-8fd6-da82fea13ae6", x-forwarded-host:"localhost:5555", x-forwarded-proto:"http", x-forwarded-prefix:"/api/tasks-rules", x-forwarded-port:"5555", x-forwarded-for:"0:0:0:0:0:0:0:1", content-length:"204", host:"192.168.83.11:8081", connection:"Keep-Alive", Content-Type:"application/json;charset=UTF-8", Authorization:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzE5NjM5MjksInVzZXJJZCI6IjY3MTk0YzE5LWNiZDMtNGJhZC1iNTdiLTIxZDQwN2I4ZmM4ZCIsInVzZXJfbmFtZSI6Im1paGFpY3JhYyIsImp0aSI6Ijk2YTYzYjAyLTg4YjEtNDc2My1iOTdiLWZiZTY2MjI2NmEyNSIsImNsaWVudF9pZCI6ImFuZHJvaWQtaG91c2UtdGFza3MtdHJhY2tlciIsInNjb3BlIjpbIndlYmNsaWVudCJdfQ"]]
+2019-10-24 15:45:43.144  DEBUG 29678 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : /order-rules/ at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2019-10-24 15:45:43.144  DEBUG 29678 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : /order-rules/ at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2019-10-24 15:45:43.144  DEBUG 29678 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : /order-rules/ at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2019-10-24 15:45:43.144  DEBUG 29678 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : /order-rules/ at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2019-10-24 15:45:43.144  DEBUG 29678 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : /order-rules/ at position 5 of 11 in additional filter chain; firing Filter: 'OAuth2AuthenticationProcessingFilter'
+2019-10-24 15:45:50.395  DEBUG 29678 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2019-10-24 15:45:50.395  DEBUG 29678 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2019-10-24 15:45:50.395  DEBUG 29678 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2019-10-24 15:45:50.395  DEBUG 29678 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2019-10-24 15:45:50.395  DEBUG 29678 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 5 of 11 in additional filter chain; firing Filter: 'OAuth2AuthenticationProcessingFilter'
+2019-10-24 15:45:50.396  DEBUG 29678 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2019-10-24 15:45:50.396  DEBUG 29678 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2019-10-24 15:45:50.396  DEBUG 29678 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2019-10-24 15:45:50.396  DEBUG 29678 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2019-10-24 15:45:50.396  DEBUG 29678 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2019-10-24 15:45:50.397  DEBUG 29678 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2019-10-24 15:45:50.397  DEBUG 29678 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : /order-rules/ reached end of additional filter chain; proceeding with original chain
+2019-10-24 15:45:50.397  DEBUG 29678 --- [http-nio-8081-exec-4] c.h.t.utils.UserContextFilter            : UserContextFilter Correlation id: 1b52e311-8144-45d2-8e46-2bd2874ed913
+2019-10-24 15:45:50.411  DEBUG 29678 --- [http-nio-8081-exec-4] c.h.t.utils.FiltersConfiguration$1       : After request [uri=/order-rules/;client=192.168.83.11;user=mihaicrac;headers=[user-agent:"PostmanRuntime/7.15.2", accept:"*/*", cache-control:"no-cache", postman-token:"9d85d360-6dd8-4b0a-b386-3f1029d61cda", accept-encoding:"gzip, deflate", tmx-correlation-id:"1b52e311-8144-45d2-8e46-2bd2874ed913", x-forwarded-host:"localhost:5555", x-forwarded-proto:"http", x-forwarded-prefix:"/api/tasks-rules", x-forwarded-port:"5555", x-forwarded-for:"0:0:0:0:0:0:0:1", content-length:"204", host:"192.168.83.11:8081", connection:"Keep-Alive", Content-Type:"application/json;charset=UTF-8", Authorization:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzE5NjM5MjksInVzZXJJZCI6IjY3MTk0YzE5LWNiZDMtNGJhZC1iNTdiLTIxZDQwN2I4ZmM4ZCIsInVzZXJfbmFtZSI6Im1paGFpY3JhYyIsImp0aSI6Ijk2YTYzYjAyLTg4YjEtNDc2My1iOTdiLWZiZTY2MjI2NmEyNSIsImNsaWVudF9pZCI6ImFuZHJvaWQtaG91c2UtdGFza3MtdHJhY2tlciIsInNjb3BlIjpbIndlYmNsaWVudCJdfQ"]]
+2019-10-24 15:46:00.415  DEBUG 29678 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : /order-rules/ at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2019-10-24 15:46:00.416  DEBUG 29678 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : /order-rules/ at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2019-10-24 15:46:00.416  DEBUG 29678 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : /order-rules/ at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2019-10-24 15:46:00.416  DEBUG 29678 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : /order-rules/ at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2019-10-24 15:46:00.416  DEBUG 29678 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : /order-rules/ at position 5 of 11 in additional filter chain; firing Filter: 'OAuth2AuthenticationProcessingFilter'
+2019-10-24 15:46:00.416  DEBUG 29678 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : /order-rules/ at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2019-10-24 15:46:00.417  DEBUG 29678 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : /order-rules/ at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2019-10-24 15:46:00.417  DEBUG 29678 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : /order-rules/ at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2019-10-24 15:46:00.417  DEBUG 29678 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : /order-rules/ at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2019-10-24 15:46:00.417  DEBUG 29678 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : /order-rules/ at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2019-10-24 15:46:00.417  DEBUG 29678 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : /order-rules/ at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2019-10-24 15:46:00.417  DEBUG 29678 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : /order-rules/ reached end of additional filter chain; proceeding with original chain
+2019-10-24 15:46:00.417  DEBUG 29678 --- [http-nio-8081-exec-5] c.h.t.utils.UserContextFilter            : UserContextFilter Correlation id: b099ee0a-eea2-4424-ab36-7d021ff41b30
+2019-10-24 15:46:00.445  DEBUG 29678 --- [http-nio-8081-exec-5] c.h.t.utils.FiltersConfiguration$1       : After request [uri=/order-rules/;client=192.168.83.11;user=mihaicrac;headers=[user-agent:"PostmanRuntime/7.15.2", accept:"*/*", cache-control:"no-cache", postman-token:"f6308154-3e19-403d-9a4d-4f7cbef64ccc", accept-encoding:"gzip, deflate", tmx-correlation-id:"b099ee0a-eea2-4424-ab36-7d021ff41b30", x-forwarded-host:"localhost:5555", x-forwarded-proto:"http", x-forwarded-prefix:"/api/tasks-rules", x-forwarded-port:"5555", x-forwarded-for:"0:0:0:0:0:0:0:1", content-length:"204", host:"192.168.83.11:8081", connection:"Keep-Alive", Content-Type:"application/json;charset=UTF-8", Authorization:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzE5NjM5MjksInVzZXJJZCI6IjY3MTk0YzE5LWNiZDMtNGJhZC1iNTdiLTIxZDQwN2I4ZmM4ZCIsInVzZXJfbmFtZSI6Im1paGFpY3JhYyIsImp0aSI6Ijk2YTYzYjAyLTg4YjEtNDc2My1iOTdiLWZiZTY2MjI2NmEyNSIsImNsaWVudF9pZCI6ImFuZHJvaWQtaG91c2UtdGFza3MtdHJhY2tlciIsInNjb3BlIjpbIndlYmNsaWVudCJdfQ"]]
+2019-10-24 15:49:00.178  DEBUG 29678 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : /order-rules/ at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2019-10-24 15:49:00.183  DEBUG 29678 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : /order-rules/ at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2019-10-24 15:49:00.183  DEBUG 29678 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : /order-rules/ at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2019-10-24 15:49:00.183  DEBUG 29678 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : /order-rules/ at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2019-10-24 15:49:00.183  DEBUG 29678 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : /order-rules/ at position 5 of 11 in additional filter chain; firing Filter: 'OAuth2AuthenticationProcessingFilter'
+2019-10-24 15:49:00.184  DEBUG 29678 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : /order-rules/ at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2019-10-24 15:49:00.184  DEBUG 29678 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : /order-rules/ at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2019-10-24 15:49:00.184  DEBUG 29678 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : /order-rules/ at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2019-10-24 15:49:00.185  DEBUG 29678 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : /order-rules/ at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2019-10-24 15:49:00.185  DEBUG 29678 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : /order-rules/ at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2019-10-24 15:49:00.185  DEBUG 29678 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : /order-rules/ at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2019-10-24 15:49:00.185  DEBUG 29678 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : /order-rules/ reached end of additional filter chain; proceeding with original chain
+2019-10-24 15:49:00.185  DEBUG 29678 --- [http-nio-8081-exec-7] c.h.t.utils.UserContextFilter            : UserContextFilter Correlation id: 0ce59507-6e78-4d9d-83d3-37434efd9718
+2019-10-24 15:49:00.262  DEBUG 29678 --- [http-nio-8081-exec-7] c.h.t.utils.FiltersConfiguration$1       : After request [uri=/order-rules/;client=192.168.83.11;user=mihaicrac;headers=[user-agent:"PostmanRuntime/7.15.2", accept:"*/*", cache-control:"no-cache", postman-token:"9b5af2f6-948d-465a-81d5-e6b0da5f5fe8", accept-encoding:"gzip, deflate", tmx-correlation-id:"0ce59507-6e78-4d9d-83d3-37434efd9718", x-forwarded-host:"localhost:5555", x-forwarded-proto:"http", x-forwarded-prefix:"/api/tasks-rules", x-forwarded-port:"5555", x-forwarded-for:"0:0:0:0:0:0:0:1", content-length:"204", host:"192.168.83.11:8081", connection:"Keep-Alive", Content-Type:"application/json;charset=UTF-8", Authorization:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzE5NjQ1MjcsInVzZXJJZCI6IjYyNDc1ZDdmLTc3ODYtNDQxZi05NDA3LWFhNDY0ZDhlOWRjNSIsInVzZXJfbmFtZSI6Im1paGFpY3JhYyIsImp0aSI6IjVkOWQyYjQyLTFkYWQtNDM3MS05MGQ1LWZiODMwZTNiYTI4NSIsImNsaWVudF9pZCI6ImFuZHJvaWQtaG91c2UtdGFza3MtdHJhY2tlciIsInNjb3BlIjpbIndlYmNsaWVudCJdfQ"]]
+2019-10-24 15:49:09.046   INFO 29678 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 15:54:09.047   INFO 29678 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 15:59:09.050   INFO 29678 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 16:04:09.051   INFO 29678 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 16:09:09.067   INFO 29678 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 16:14:09.068   INFO 29678 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 16:19:09.071   INFO 29678 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 16:24:09.074   INFO 29678 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 16:29:09.075   INFO 29678 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 16:34:09.076   INFO 29678 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 16:39:09.076   INFO 29678 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 16:44:09.079   INFO 29678 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-24 16:49:09.124   INFO 29678 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

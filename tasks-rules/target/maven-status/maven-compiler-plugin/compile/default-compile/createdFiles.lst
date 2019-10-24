@@ -20,6 +20,7 @@ com/house/taskstracker/utils/FiltersConfiguration$1.class
 com/house/taskstracker/controller/AddOrderRuleEventCommand.class
 com/house/taskstracker/domain/OrderRule.class
 com/house/taskstracker/domain/OrderRuleEvent.class
+com/house/taskstracker/security/JWTTokenStoreConfig.class
 com/house/taskstracker/application/OrderRuleService.class
 com/house/taskstracker/utils/UserContextInterceptor.class
 com/house/taskstracker/controller/OrderRuleDto$OrderRuleItemDto.class
