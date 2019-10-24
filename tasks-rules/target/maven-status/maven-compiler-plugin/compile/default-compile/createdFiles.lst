@@ -1,5 +1,8 @@
 com/house/taskstracker/utils/UserContextFilter.class
+com/house/taskstracker/utils/MdcLoggingFilterConfiguration.class
 com/house/taskstracker/controller/DtoTransformer.class
+com/house/taskstracker/utils/MdcLoggingFilterConfiguration$1.class
+com/house/taskstracker/utils/FiltersConfiguration.class
 com/house/taskstracker/controller/OrderRuleController.class
 com/house/taskstracker/controller/AddOrderRuleCommand$OrderRuleItemDto.class
 com/house/taskstracker/controller/OrderRuleDto.class
@@ -13,6 +16,7 @@ com/house/taskstracker/TasksRulesApplication.class
 com/house/taskstracker/security/ResourceServerConfiguration.class
 com/house/taskstracker/controller/OrderRuleEventsController.class
 com/house/taskstracker/controller/AddOrderRuleCommand.class
+com/house/taskstracker/utils/FiltersConfiguration$1.class
 com/house/taskstracker/controller/AddOrderRuleEventCommand.class
 com/house/taskstracker/domain/OrderRule.class
 com/house/taskstracker/domain/OrderRuleEvent.class

@@ -20,8 +20,6 @@ spring.application.name: tasks-rules
 management.endpoints.web.exposure.include: bindings
 cloud.aws.region.static: eu-central-1
 server.port: 8081
-logging:
-  file: application.log
 
 
 eureka:
@@ -35,8 +33,17 @@ eureka:
 
 security:
   oauth2:
-   resource:
-      userInfoUri: http://localhost:8084/user
+    resource:
+      token-info-uri: http://localhost:8084/oauth/check_token
+
+logging:
+  file: application.log
+  level:
+    com.house.taskstracker: DEBUG
+    com.netflix.hystrix: DEBUG
+  pattern.level: '%X{url}%X{extraMdcData} %5p'
+
+logging.level.org.springframework.security.web.FilterChainProxy: DEBUG
 
 spring.datasource:
   driverClassName: org.postgresql.Driver

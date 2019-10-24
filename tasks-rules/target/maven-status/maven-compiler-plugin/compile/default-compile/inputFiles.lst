@@ -9,6 +9,7 @@
 /home/mihaic/house-tasks-tracker/tasks-rules/src/main/java/com/house/taskstracker/application/OrderRuleService.java
 /home/mihaic/house-tasks-tracker/tasks-rules/src/main/java/com/house/taskstracker/utils/UserContextHolder.java
 /home/mihaic/house-tasks-tracker/tasks-rules/src/main/java/com/house/taskstracker/controller/DtoTransformer.java
+/home/mihaic/house-tasks-tracker/tasks-rules/src/main/java/com/house/taskstracker/utils/FiltersConfiguration.java
 /home/mihaic/house-tasks-tracker/tasks-rules/src/main/java/com/house/taskstracker/infrastructure/StreamConfig.java
 /home/mihaic/house-tasks-tracker/tasks-rules/src/main/java/com/house/taskstracker/utils/UserContext.java
 /home/mihaic/house-tasks-tracker/tasks-rules/src/main/java/com/house/taskstracker/domain/OrderRule.java
@@ -17,3 +18,4 @@
 /home/mihaic/house-tasks-tracker/tasks-rules/src/main/java/com/house/taskstracker/security/ResourceServerConfiguration.java
 /home/mihaic/house-tasks-tracker/tasks-rules/src/main/java/com/house/taskstracker/controller/AddOrderRuleCommand.java
 /home/mihaic/house-tasks-tracker/tasks-rules/src/main/java/com/house/taskstracker/controller/AddOrderRuleEventCommand.java
+/home/mihaic/house-tasks-tracker/tasks-rules/src/main/java/com/house/taskstracker/utils/MdcLoggingFilterConfiguration.java

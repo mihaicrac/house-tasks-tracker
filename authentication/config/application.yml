@@ -2,9 +2,6 @@ spring.application.name: authentication
 management.endpoints.web.exposure.include: bindings
 cloud.aws.region.static: eu-central-1
 server.port: 8084
-logging:
-  file: application.log
-
 
 eureka:
   instance:
@@ -15,6 +12,14 @@ eureka:
     serviceUrl:
         defaultZone: http://localhost:8761/eureka/
 
+logging:
+  file: application.log
+  level:
+    com.house.taskstracker: DEBUG
+    com.netflix.hystrix: DEBUG
+  pattern.level: '%X{url}%X{extraMdcData} %5p'
+
+logging.level.org.springframework.security.web.FilterChainProxy: DEBUG
 
 spring.datasource:
   driverClassName: org.postgresql.Driver
