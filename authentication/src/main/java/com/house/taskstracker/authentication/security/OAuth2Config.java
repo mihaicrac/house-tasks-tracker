@@ -45,7 +45,7 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
         clients.inMemory()
                .withClient("android-house-tasks-tracker")
                .secret(passwordEncoder.encode("test1234"))
-               .authorizedGrantTypes("refresh_token", "password", "client_credentials")
+               .authorizedGrantTypes("refresh_token", "password")
                .scopes("webclient", "mobileclient");
     }
 

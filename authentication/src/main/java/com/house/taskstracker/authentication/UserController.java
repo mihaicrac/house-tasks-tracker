@@ -1,18 +1,17 @@
 package com.house.taskstracker.authentication;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.house.taskstracker.authentication.domain.User;
 import com.house.taskstracker.authentication.domain.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.provider.OAuth2Authentication;
+import org.springframework.security.oauth2.provider.endpoint.TokenEndpoint;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
 import java.util.UUID;
 
 @RestController
@@ -24,8 +23,14 @@ public class UserController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    private TokenEndpoint tokenEndpoint;
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
     @RequestMapping(value = "/users", method = RequestMethod.POST)
-    public UUID addUser(@RequestBody UserAddRequest regReq) {
+    public UserDto addUser(HttpServletRequest request, @RequestBody UserAddRequest regReq) {
 
         User u = new User();
         u.setEmail(regReq.getEmail());
@@ -37,16 +42,19 @@ public class UserController {
         u.setUsername(regReq.getUsername());
         userRepository.save(u);
 
-        // Return the token
-        return UUID.randomUUID();
+
+
+        return userDto(u);
     }
 
-    @RequestMapping(value =  "/user" , produces = "application/json")
-    public Map<String, Object> user(OAuth2Authentication user) {
-        Map<String, Object> userInfo = new HashMap<>();
-        userInfo.put("user", user.getUserAuthentication().getPrincipal());
-        userInfo.put("authorities", AuthorityUtils.authorityListToSet(user.getUserAuthentication().getAuthorities()));
-        return userInfo;
+    private UserDto userDto(User user){
+        UserDto userDto = new UserDto();
+        userDto.setId(user.getId());
+        userDto.setUsername(user.getUsername());
+        userDto.setFirstname(user.getFirstname());
+        userDto.setLastname(user.getLastname());
+        userDto.setEmail(user.getEmail());
+        return userDto;
     }
 
 }
