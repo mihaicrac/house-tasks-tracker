@@ -1,6 +1,6 @@
 package com.house.taskstracker.authentication;
 
-import com.house.taskstracker.authentication.domain.UserRepository;
+import com.house.taskstracker.authentication.domain.user.UserRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;

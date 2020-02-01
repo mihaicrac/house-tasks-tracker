@@ -1,36 +1,31 @@
-package com.house.taskstracker.authentication.domain;
+package com.house.taskstracker.authentication.domain.user;
 
+import com.house.taskstracker.authentication.domain.usergroup.UserGroup;
+import com.house.taskstracker.authentication.dto.UserDto;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.UUID;
+import java.util.*;
 
 @Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 @Table(name = "users")
 public class User implements UserDetails {
-
     @Id
     private UUID id;
 
+    @EqualsAndHashCode.Include
     @Column(name = "username", length = 40, unique = true, nullable = false)
     @NotNull
     @Size(min = 4, max = 50)
     private String username;
-
-    @Column(name = "password", length = 60, nullable = false)
-    @NotNull
-    @Size(min = 4, max = 100)
-    private String password;
 
     @Column(name = "firstname", length = 40)
     @NotNull
@@ -43,11 +38,22 @@ public class User implements UserDetails {
     private String lastname;
 
     @Column(name = "email", length = 254, unique = true, nullable = false)
+    @NotNull
     @Size(min = 4, max = 50)
     private String email;
 
+    @Column(name = "password", length = 60, nullable = false)
+    @NotNull
+    @Size(min = 4, max = 100)
+    private String password;
+
+    @NotNull
     @Column(name = "enabled", nullable = false)
     private Boolean enabled;
+
+    @OneToMany(mappedBy = "user")
+    @ToString.Exclude
+    private Set<UserGroup> groups = new HashSet<>();
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -72,5 +78,23 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return enabled;
+    }
+
+    public static User createUser(UserDto regReq) {
+        User u = new User();
+        u.setEmail(regReq.getEmail());
+        u.setFirstname(regReq.getFirstName());
+        u.setLastname(regReq.getLastName());
+        u.setId(UUID.randomUUID());
+        u.setUsername(regReq.getUsername());
+        return u;
+    }
+
+    public void addGroup(UserGroup group){
+        groups.add(group);
+    }
+
+    public void deleteGroup(UserGroup group){
+        groups.remove(group);
     }
 }

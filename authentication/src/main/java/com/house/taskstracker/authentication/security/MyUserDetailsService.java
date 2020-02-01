@@ -1,6 +1,6 @@
 package com.house.taskstracker.authentication.security;
 
-import com.house.taskstracker.authentication.domain.UserRepository;
+import com.house.taskstracker.authentication.domain.user.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
