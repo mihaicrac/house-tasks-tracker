@@ -1,4 +1,0 @@
-com/house/taskstracker/zuulsvr/ZuulServerApplication.class
-com/house/taskstracker/zuulsvr/filter/TrackingFilter.class
-com/house/taskstracker/zuulsvr/filter/FilterUtils.class
-com/house/taskstracker/zuulsvr/filter/AuthenticationFilter.class
