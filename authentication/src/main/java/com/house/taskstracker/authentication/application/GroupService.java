@@ -12,10 +12,10 @@ import com.house.taskstracker.authentication.utils.mapper.AuthenticationMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @Service
@@ -62,6 +62,12 @@ public class GroupService {
         user.deleteGroup(userGroup);
         group.deleteUser(userGroup);
         userGroupRepository.delete(userGroup);
+    }
+
+    public List<GroupDto> getGroups(UUID userId) {
+        User user = userRepository.findById(userId).orElseThrow(RuntimeException::new);
+        List<UserGroup> groups = userGroupRepository.findByUser(user);
+        return groups.stream().map(v -> authenticationMapper.map(v.getGroup(), GroupDto.class)).collect(Collectors.toList());
     }
 
 }

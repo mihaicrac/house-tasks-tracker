@@ -6,6 +6,7 @@ import com.house.taskstracker.authentication.utils.UserContext;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @AllArgsConstructor
@@ -17,6 +18,13 @@ public class GroupController {
     public GroupDto addGroup(@RequestBody GroupDto groupDto) {
         UUID userId = UserContext.getUserId();
         return groupService.addGroup(userId, groupDto);
+    }
+
+
+    @GetMapping(value = "/groups")
+    public List<GroupDto> getGroups() {
+        UUID userId = UserContext.getUserId();
+        return groupService.getGroups(userId);
     }
 
     @PostMapping(value = "/groups/{id}/user")

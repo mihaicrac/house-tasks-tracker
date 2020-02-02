@@ -30,6 +30,7 @@ spring.jpa:
   database-platform: org.hibernate.dialect.PostgreSQL95Dialect
 #  generate-ddl: true
   show-sql: true
+  open-in-view: false
 
   hibernate:
     ddl-auto: validate
