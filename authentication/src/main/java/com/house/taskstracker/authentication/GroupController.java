@@ -2,6 +2,7 @@ package com.house.taskstracker.authentication;
 
 import com.house.taskstracker.authentication.application.GroupService;
 import com.house.taskstracker.authentication.dto.GroupDto;
+import com.house.taskstracker.authentication.dto.UserDto;
 import com.house.taskstracker.authentication.utils.UserContext;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +25,12 @@ public class GroupController {
     @GetMapping(value = "/groups")
     public List<GroupDto> getGroups() {
         UUID userId = UserContext.getUserId();
-        return groupService.getGroups(userId);
+        return groupService.getGroupsByUser(userId);
+    }
+
+    @GetMapping(value = "/groups/{id}/users")
+    public List<UserDto> getUsers(@PathVariable UUID id) {
+        return groupService.getUsersByGroup(id);
     }
 
     @PostMapping(value = "/groups/{id}/user")

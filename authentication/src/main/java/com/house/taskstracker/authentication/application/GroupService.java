@@ -8,6 +8,7 @@ import com.house.taskstracker.authentication.domain.usergroup.UserGroup;
 import com.house.taskstracker.authentication.domain.usergroup.UserGroupKey;
 import com.house.taskstracker.authentication.domain.usergroup.UserGroupRepository;
 import com.house.taskstracker.authentication.dto.GroupDto;
+import com.house.taskstracker.authentication.dto.UserDto;
 import com.house.taskstracker.authentication.utils.mapper.AuthenticationMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -64,10 +65,16 @@ public class GroupService {
         userGroupRepository.delete(userGroup);
     }
 
-    public List<GroupDto> getGroups(UUID userId) {
+    public List<GroupDto> getGroupsByUser(UUID userId) {
         User user = userRepository.findById(userId).orElseThrow(RuntimeException::new);
         List<UserGroup> groups = userGroupRepository.findByUser(user);
         return groups.stream().map(v -> authenticationMapper.map(v.getGroup(), GroupDto.class)).collect(Collectors.toList());
+    }
+
+    public List<UserDto> getUsersByGroup(UUID groupId) {
+        Group group = groupRepository.findById(groupId).orElseThrow(RuntimeException::new);
+        List<UserGroup> users = userGroupRepository.findByGroup(group);
+        return users.stream().map(u -> authenticationMapper.map(u.getUser(), UserDto.class)).collect(Collectors.toList());
     }
 
 }

@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.time.Instant;
-import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -25,7 +24,7 @@ public class OrderRuleService {
     private OrderOffsetChangedSource events;
 
     public OrderRule addOrderRule(AddOrderRuleCommand command) {
-        return orderRuleRepository.save(toOrderRule(command.getOrderRuleItems()));
+        return orderRuleRepository.save(toOrderRule(command));
     }
 
     @Transactional
@@ -37,13 +36,15 @@ public class OrderRuleService {
         return rule;
     }
 
-    public OrderRule getOrderRule(UUID id){
+    public OrderRule getOrderRule(UUID id) {
         return orderRuleRepository.findById(id).get();
     }
 
-    private OrderRule toOrderRule(List<AddOrderRuleCommand.OrderRuleItemDto> items) {
+    private OrderRule toOrderRule(AddOrderRuleCommand command) {
         OrderRule rule = new OrderRule();
-        rule.setOrderRuleItems(items.stream().map(this::toOrderRuleItem).collect(Collectors.toList()));
+        rule.setName(command.getName());
+        rule.setGroupId(command.getGroupId());
+        rule.setOrderRuleItems(command.getOrderRuleItems().stream().map(this::toOrderRuleItem).collect(Collectors.toList()));
         rule.setId(UUID.randomUUID());
         return rule;
     }

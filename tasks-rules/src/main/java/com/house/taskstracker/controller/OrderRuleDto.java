@@ -10,6 +10,8 @@ public class OrderRuleDto {
 
     private UUID id;
 
+    private String name;
+
     private List<OrderRuleItemDto> orderRuleItems;
 
     private int offset;

@@ -1,6 +1,9 @@
 CREATE TABLE public.order_rules (
     id uuid PRIMARY KEY,
+    name character varying(100) NOT NULL,
+    group_id uuid,
     rule_offset integer
+--    Unique on (group_id, name)
 );
 
 CREATE TABLE public.order_rule_items (

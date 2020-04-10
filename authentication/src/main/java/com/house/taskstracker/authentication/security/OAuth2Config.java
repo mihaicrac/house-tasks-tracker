@@ -1,10 +1,16 @@
 package com.house.taskstracker.authentication.security;
 
+import com.house.taskstracker.authentication.ApiError;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.common.exceptions.OAuth2Exception;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
@@ -55,9 +61,19 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
         tokenEnhancerChain.setTokenEnhancers(Arrays.asList(jwtTokenEnhancer, jwtAccessTokenConverter));
 
         endpoints.tokenStore(tokenStore)                             //JWT
-                 .accessTokenConverter(jwtAccessTokenConverter)       //JWT
-                 .tokenEnhancer(tokenEnhancerChain)                   //JWT
-                 .authenticationManager(authenticationManager).userDetailsService(userDetailsService);
+                .accessTokenConverter(jwtAccessTokenConverter)       //JWT
+                .tokenEnhancer(tokenEnhancerChain)                   //JWT
+                .authenticationManager(authenticationManager).userDetailsService(userDetailsService)
+                .exceptionTranslator(exception -> {
+                    if (exception instanceof OAuth2Exception) {
+                        OAuth2Exception oAuth2Exception = (OAuth2Exception) exception;
+                        return ResponseEntity
+                                .status(oAuth2Exception.getHttpErrorCode())
+                                .body(new CustomOauthException(oAuth2Exception.getMessage()));
+                    } else {
+                        throw exception;
+                    }
+                });
     }
 
 }

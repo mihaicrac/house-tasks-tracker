@@ -9,6 +9,10 @@ public class OrderRule {
     @Id
     private UUID id;
 
+    private String name;
+
+    private UUID groupId;
+
     @OrderBy("orderId ASC")
     @ElementCollection
     @CollectionTable(name = "order_rule_items", joinColumns = @JoinColumn(name = "order_rule_id"))
@@ -32,6 +36,22 @@ public class OrderRule {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public UUID getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(UUID groupId) {
+        this.groupId = groupId;
     }
 
     public List<OrderRuleItem> getOrderRuleItems() {

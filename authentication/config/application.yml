@@ -25,6 +25,7 @@ spring.datasource:
   driverClassName: org.postgresql.Driver
   url: jdbc:postgresql://localhost:5437/postgres
   username: postgres
+  password: test
 
 spring.jpa:
   database-platform: org.hibernate.dialect.PostgreSQL95Dialect

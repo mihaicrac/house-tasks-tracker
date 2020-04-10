@@ -65,6 +65,7 @@ public class GroupServiceTest {
     @Test
     public void testAddGroup() {
         UserGroup userGroup = addGroup();
+        groupService.getGroupsByUser(userGroup.getId().getUserId());
         Assert.assertNotNull(userGroup.getGroup().getId());
         Assert.assertTrue(userGroup.isAdmin());
     }
