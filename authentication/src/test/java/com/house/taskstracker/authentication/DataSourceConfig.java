@@ -4,7 +4,6 @@ import liquibase.integration.spring.SpringLiquibase;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -28,14 +27,6 @@ import java.util.Map;
 @EnableJpaRepositories("com.house.taskstracker.authentication.*")
 @TestConfiguration
 public class DataSourceConfig {
-
-//    @Bean
-//    public DataSource dataSource() {
-//        EmbeddedDatabaseBuilder dbBuilder = new EmbeddedDatabaseBuilder();
-//        return dbBuilder.setType(EmbeddedDatabaseType.H2)
-//                .build();
-//    }
-
 
     @Bean
     public PostgreSQLContainer genericContainer() {

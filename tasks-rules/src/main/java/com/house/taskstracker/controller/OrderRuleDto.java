@@ -12,6 +12,8 @@ public class OrderRuleDto {
 
     private String name;
 
+    private UUID groupId;
+
     private List<OrderRuleItemDto> orderRuleItems;
 
     private int offset;

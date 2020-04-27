@@ -2,6 +2,8 @@ package com.house.taskstracker.application;
 
 import com.house.taskstracker.controller.AddOrderRuleCommand;
 import com.house.taskstracker.controller.AddOrderRuleEventCommand;
+import com.house.taskstracker.controller.DtoTransformer;
+import com.house.taskstracker.controller.OrderRuleDto;
 import com.house.taskstracker.domain.OrderRule;
 import com.house.taskstracker.domain.OrderRuleEvent;
 import com.house.taskstracker.domain.OrderRuleItem;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.time.Instant;
+import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -22,9 +25,10 @@ public class OrderRuleService {
 
     private OrderRuleRepository orderRuleRepository;
     private OrderOffsetChangedSource events;
+    private DtoTransformer dtoTransformer;
 
-    public OrderRule addOrderRule(AddOrderRuleCommand command) {
-        return orderRuleRepository.save(toOrderRule(command));
+    public OrderRuleDto addOrderRule(AddOrderRuleCommand command) {
+        return dtoTransformer.toOrderRuleDto(orderRuleRepository.save(toOrderRule(command)));
     }
 
     @Transactional
@@ -36,8 +40,12 @@ public class OrderRuleService {
         return rule;
     }
 
-    public OrderRule getOrderRule(UUID id) {
-        return orderRuleRepository.findById(id).get();
+    public OrderRuleDto getOrderRule(UUID id) {
+        return dtoTransformer.toOrderRuleDto(orderRuleRepository.findById(id).get());
+    }
+
+    public List<OrderRuleDto> getOrderRules(UUID groupId) {
+        return orderRuleRepository.findByGroupId(groupId).stream().map(g -> dtoTransformer.toOrderRuleDto(g)).collect(Collectors.toList());
     }
 
     private OrderRule toOrderRule(AddOrderRuleCommand command) {

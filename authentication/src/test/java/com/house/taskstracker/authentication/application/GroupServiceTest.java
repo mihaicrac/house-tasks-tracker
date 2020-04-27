@@ -26,6 +26,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -82,6 +83,15 @@ public class GroupServiceTest {
         Assert.assertFalse(userGroupRepository.findById(new UserGroupKey(groupId, userId)).isPresent());
         Assert.assertTrue(userRepository.findById(userId).isPresent());
         Assert.assertTrue(groupRepository.findById(groupId).isPresent());
+    }
+
+    @Test
+    public void getGroupByName() {
+        UserGroup userGroup = addGroup();
+        String name = userGroup.getGroup().getName();
+        List<GroupDto> group = groupService.getGroupsByName(name);
+        
+        Assert.assertEquals(userGroup.getId().getGroupId(), group.get(0).getId());
     }
 
     private UserGroup addGroup() {

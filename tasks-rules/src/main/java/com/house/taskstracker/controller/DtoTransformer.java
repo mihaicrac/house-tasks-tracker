@@ -15,6 +15,8 @@ public class DtoTransformer {
                 .map(this::toOrderRuleItemDto)
                 .collect(Collectors.toList()));
         dto.setId(rule.getId());
+        dto.setName(rule.getName());
+        dto.setGroupId(rule.getGroupId());
         dto.setOffset(rule.getOffset());
         return dto;
     }

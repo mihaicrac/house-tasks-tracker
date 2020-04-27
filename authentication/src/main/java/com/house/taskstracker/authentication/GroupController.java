@@ -21,10 +21,12 @@ public class GroupController {
         return groupService.addGroup(userId, groupDto);
     }
 
-
     @GetMapping(value = "/groups")
-    public List<GroupDto> getGroups() {
+    public List<GroupDto> getGroups(@RequestParam(value = "name", required = false) String name) {
         UUID userId = UserContext.getUserId();
+        if (name != null && !name.isEmpty()) {
+            return groupService.getGroupsByName(name);
+        }
         return groupService.getGroupsByUser(userId);
     }
 

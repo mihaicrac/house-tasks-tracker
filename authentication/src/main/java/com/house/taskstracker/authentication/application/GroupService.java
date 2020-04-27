@@ -11,6 +11,7 @@ import com.house.taskstracker.authentication.dto.GroupDto;
 import com.house.taskstracker.authentication.dto.UserDto;
 import com.house.taskstracker.authentication.utils.mapper.AuthenticationMapper;
 import lombok.AllArgsConstructor;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -69,6 +70,14 @@ public class GroupService {
         User user = userRepository.findById(userId).orElseThrow(RuntimeException::new);
         List<UserGroup> groups = userGroupRepository.findByUser(user);
         return groups.stream().map(v -> authenticationMapper.map(v.getGroup(), GroupDto.class)).collect(Collectors.toList());
+    }
+
+    public List<GroupDto> getGroupsByName(String name) {
+        Specification<Group> specification = (root, criteriaQuery, criteriaBuilder) ->
+                criteriaBuilder.like(root.get("name"), name+"%");
+
+        List<Group> groups = groupRepository.findAll(specification);
+        return groups.stream().map(v -> authenticationMapper.map(v, GroupDto.class)).collect(Collectors.toList());
     }
 
     public List<UserDto> getUsersByGroup(UUID groupId) {
