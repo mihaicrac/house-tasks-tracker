@@ -11,10 +11,10 @@ public class UserContext {
     public static final String USER_ID        = "tmx-user-id";
     public static final String ORG_ID         = "tmx-org-id";
 
-    private static final ThreadLocal<String> correlationId= new ThreadLocal<String>();
-    private static final ThreadLocal<String> authToken= new ThreadLocal<String>();
+    private static final ThreadLocal<String> correlationId= new ThreadLocal<>();
+    private static final ThreadLocal<String> authToken= new ThreadLocal<>();
     private static final ThreadLocal<UUID> userId = new ThreadLocal<>();
-    private static final ThreadLocal<String> orgId = new ThreadLocal<String>();
+    private static final ThreadLocal<String> orgId = new ThreadLocal<>();
 
 
     public static String getCorrelationId() { return correlationId.get(); }

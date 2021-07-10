@@ -24,7 +24,7 @@ public class NotificationsController {
 
     @PostMapping("/notifications")
     public void addRule(@RequestBody SendNotificationCommand command) throws FirebaseMessagingException {
-        TasksRulesClient.OrderRuleDto orderRule = rulesClient.getOrderRule(command.getRuleId());
+        TasksRulesClient.OrderRuleDto orderRule = rulesClient.getRule(command.getSenderUser(), command.getRuleId());
         List<UUID> recipients = orderRule.getOrderRuleItems()
                                          .stream()
                                          .map(i -> i.getUserId())

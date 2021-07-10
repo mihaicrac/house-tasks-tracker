@@ -52,7 +52,7 @@ public class UserServiceTest {
     @Test
     public void testAddUser() {
         UserDto userDto = DtoFactory.createUserDto();
-        userService.createUser(userDto);
+        UserDto user1 = userService.createUser(userDto);
         User user = userRepository.findByUsername(userDto.getUsername()).get();
         Assert.assertTrue(passwordEncoder.matches(userDto.getPassword(), user.getPassword()));
         Assert.assertNotNull(user.getId());

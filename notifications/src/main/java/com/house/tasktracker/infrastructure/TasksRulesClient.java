@@ -1,30 +1,22 @@
 package com.house.tasktracker.infrastructure;
 
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestHeader;
 
 import java.util.List;
 import java.util.UUID;
 
-@Component
-public class TasksRulesClient {
+@FeignClient(name = "tasks-rules")
+public interface TasksRulesClient {
 
-    private RestTemplate restTemplate;
-    public final String TASKS_RULES;
-
-    public TasksRulesClient(@Value("${tasks-rules-service.order-rules}") String tasksRules) {
-        restTemplate = new RestTemplate();
-        TASKS_RULES = tasksRules;
-    }
-
-    public OrderRuleDto getOrderRule(UUID ruleId) {
-        return restTemplate.getForEntity(TASKS_RULES + "/" + ruleId, OrderRuleDto.class).getBody();
-    }
+    @GetMapping("/order-rules/{id}")
+    OrderRuleDto getRule(@RequestHeader("user-id") UUID userId, @PathVariable("id") UUID id);
 
     @Data
-    public static class OrderRuleDto {
+    class OrderRuleDto {
 
         private UUID id;
 

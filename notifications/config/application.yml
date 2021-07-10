@@ -1,7 +1,7 @@
 spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults: false
 
 spring.liquibase.enabled: true
-spring.liquibase.drop-first: true
+#spring.liquibase.drop-first: true
 spring.liquibase.change-log: classpath:liquibase/master-changelog.xml
 
 
@@ -9,6 +9,7 @@ spring.datasource:
   driverClassName: org.postgresql.Driver
   url: jdbc:postgresql://localhost:5435/postgres
   username: postgres
+  password: test
 
 spring.jpa:
   database-platform: org.hibernate.dialect.PostgreSQL95Dialect
@@ -20,13 +21,10 @@ spring.jpa:
 
 
 
-spring.application.name: notifications
+spring.application.name: notifications-service
 server.port: 8083
 logging:
   file: application.log
-
-tasks-rules-service:
- order-rules: http://localhost:8081/order-rules
 
 
 eureka:
@@ -42,3 +40,10 @@ security:
   oauth2:
    resource:
       userInfoUri: http://localhost:8084/user
+
+feign:
+  client:
+    config:
+      default:
+        requestInterceptors:
+          com.house.tasktracker.utils.UserContextInterceptor

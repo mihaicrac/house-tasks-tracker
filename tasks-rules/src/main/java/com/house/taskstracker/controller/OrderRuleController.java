@@ -1,6 +1,7 @@
 package com.house.taskstracker.controller;
 
 import com.house.taskstracker.application.OrderRuleService;
+import com.house.taskstracker.utils.UserContext;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,8 +25,14 @@ public class OrderRuleController {
         return orderRuleService.getOrderRule(id);
     }
 
-    @GetMapping("/order-rules/")
+    @GetMapping("/order-rules")
     public List<OrderRuleDto> getRules(@RequestParam(name = "groupId", required = true) UUID groupId) {
-        return orderRuleService.getOrderRules(groupId);
+        return orderRuleService.getOrderRulesByGroupId(groupId);
+    }
+
+    @GetMapping("/order-rules/user")
+    public List<OrderRuleDto> getRules() {
+        UUID userId = UserContext.getUserId();
+        return orderRuleService.getOrderRulesByUserId(userId);
     }
 }

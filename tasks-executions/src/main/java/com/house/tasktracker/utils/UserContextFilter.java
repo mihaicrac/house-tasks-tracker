@@ -1,4 +1,4 @@
-package com.house.taskstracker.utils;
+package com.house.tasktracker.utils;
 
 import org.springframework.stereotype.Component;
 
@@ -18,9 +18,7 @@ public class UserContextFilter implements Filter {
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
 
         UserContextHolder.getContext().setCorrelationId(httpServletRequest.getHeader(UserContext.CORRELATION_ID));
-        if(httpServletRequest.getHeader(UserContext.USER_ID) != null) {
-            UserContextHolder.getContext().setUserId(UUID.fromString(httpServletRequest.getHeader(UserContext.USER_ID)));
-        }
+        UserContextHolder.getContext().setUserId(UUID.fromString(httpServletRequest.getHeader(UserContext.USER_ID)));
         UserContextHolder.getContext().setOrgId(httpServletRequest.getHeader(UserContext.ORG_ID));
 
         filterChain.doFilter(httpServletRequest, servletResponse);

@@ -1,32 +1,20 @@
 package com.house.tasktracker.infrastructure;
 
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpMethod;
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.UUID;
 
-@Component
-public class NotificationsClient {
+@FeignClient(name = "notifications-service")
+public interface NotificationsClient {
 
-    private RestTemplate restTemplate;
-    public final String NOTIFICATIONS;
-
-    public NotificationsClient(@Value("${notifications-service.notifications}") String tasksRules) {
-        restTemplate = new RestTemplate();
-        NOTIFICATIONS = tasksRules;
-    }
-
-    public void sendNotifications(SendNotificationCommand sendNotificationCommand) {
-        HttpEntity<SendNotificationCommand> request = new HttpEntity<>(sendNotificationCommand);
-        restTemplate.exchange(NOTIFICATIONS, HttpMethod.POST, request, Void.class);
-    }
+    @PostMapping("/notifications")
+    void sendNotifications(SendNotificationCommand sendNotificationCommand);
 
     @Data
-    public static class SendNotificationCommand {
+    class SendNotificationCommand {
+        private UUID taskExecutionId;
         private UUID ruleId;
         private UUID senderUser;
     }

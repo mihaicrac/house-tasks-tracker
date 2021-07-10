@@ -12,7 +12,7 @@ import java.io.IOException;
 @Configuration
 public class FirebaseConfig {
 
-    private final String PATH = "/home/mihaic/Downloads/house-tasks-tracker-firebase-adminsdk-u8ouh-6d2ad5791c.json";
+    private final String PATH = "C:\\Users\\mihaicra\\house-tasks-tracker-firebase-adminsdk-chgey-4d90db019e.json";
 
     @PostConstruct
     public void initializeFirebaseCloud() throws IOException {

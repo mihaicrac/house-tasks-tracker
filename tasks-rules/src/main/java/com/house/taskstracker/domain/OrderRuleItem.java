@@ -4,7 +4,7 @@ import javax.persistence.Embeddable;
 import java.util.UUID;
 
 //TODO: make this an entity (even if it is a value) with PRIMARY KEY(order_rule_id, order_id)
-
+// find a nice way for updating a rule in case of making OrderRuleItem an Entity
 @Embeddable
 public class OrderRuleItem {
 

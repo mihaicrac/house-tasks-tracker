@@ -1,4 +1,4 @@
-package com.house.taskstracker.authentication;
+package com.house.tasktracker;
 
 import liquibase.integration.spring.SpringLiquibase;
 import org.slf4j.Logger;
@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @EnableTransactionManagement
-@EnableJpaRepositories("com.house.taskstracker.authentication.*")
+@EnableJpaRepositories("com.house.taskstracker.*")
 @TestConfiguration
 public class DataSourceConfig {
 
@@ -36,7 +36,7 @@ public class DataSourceConfig {
                 .withDatabaseName("integration-tests-db")
                 .withUsername("sa")
                 .withPassword("sa");
-        container.withCommand("postgres -c log_statement=all");
+//        container.withCommand("postgres -c log_statement=all");
         container.start();
         container.followOutput(consumer);
         return container;
@@ -58,7 +58,7 @@ public class DataSourceConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(@Autowired DataSource dataSource) {
         LocalContainerEntityManagerFactoryBean result = new LocalContainerEntityManagerFactoryBean();
 
-        result.setPackagesToScan("com.house.taskstracker.authentication");
+        result.setPackagesToScan("com.house.taskstracker");
         result.setDataSource(dataSource);
         result.setJpaVendorAdapter(jpaVendorAdapter());
 

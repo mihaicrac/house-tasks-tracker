@@ -1,4 +1,4 @@
-package com.house.taskstracker.utils;
+package com.house.tasktracker.utils;
 
 import org.springframework.stereotype.Component;
 

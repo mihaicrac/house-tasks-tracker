@@ -1,12 +1,15 @@
 spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults: false
 
 spring.liquibase.enabled: true
-spring.liquibase.drop-first: true
+#spring.liquibase.drop-first: true
 spring.liquibase.change-log: classpath:liquibase/master-changelog.xml
 
 
 #spring.cloud.stream.kafka.streams.binder.configuration.commit.interval.ms: 1000
 #spring.cloud.stream.kafka.streams.binder.configuration:
+
+spring.cloud.stream.kafka.binder.configuration.auto.offset.reset: earliest
+
 #  default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
 #  default.value.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
 spring.cloud.stream.bindings.offset-changed:
@@ -36,11 +39,19 @@ security:
    resource:
       userInfoUri: http://localhost:8084/user
 
+feign:
+  client:
+    config:
+      default:
+        requestInterceptors:
+          com.house.tasktracker.utils.UserContextInterceptor
+
 
 spring.datasource:
   driverClassName: org.postgresql.Driver
   url: jdbc:postgresql://localhost:5437/postgres
   username: postgres
+  password: test
 
 spring.jpa:
   database-platform: org.hibernate.dialect.PostgreSQL95Dialect
@@ -49,9 +60,6 @@ spring.jpa:
 
   hibernate:
     ddl-auto: validate
-
-notifications-service:
- notifications: http://localhost:8083/notifications
 
 ---
 

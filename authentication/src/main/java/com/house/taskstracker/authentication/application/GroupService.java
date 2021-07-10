@@ -65,13 +65,14 @@ public class GroupService {
         group.deleteUser(userGroup);
         userGroupRepository.delete(userGroup);
     }
-
+    @Transactional
     public List<GroupDto> getGroupsByUser(UUID userId) {
         User user = userRepository.findById(userId).orElseThrow(RuntimeException::new);
         List<UserGroup> groups = userGroupRepository.findByUser(user);
         return groups.stream().map(v -> authenticationMapper.map(v.getGroup(), GroupDto.class)).collect(Collectors.toList());
     }
 
+    @Transactional
     public List<GroupDto> getGroupsByName(String name) {
         Specification<Group> specification = (root, criteriaQuery, criteriaBuilder) ->
                 criteriaBuilder.like(root.get("name"), name+"%");

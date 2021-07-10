@@ -40,5 +40,5 @@ spring.jpa:
 spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults: false
 
 spring.liquibase.enabled: true
-spring.liquibase.drop-first: true
+#spring.liquibase.drop-first: true
 spring.liquibase.change-log: classpath:liquibase/master-changelog.xml

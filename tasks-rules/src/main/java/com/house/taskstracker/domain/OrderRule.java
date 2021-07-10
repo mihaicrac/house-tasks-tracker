@@ -4,13 +4,15 @@ import javax.persistence.*;
 import java.util.List;
 import java.util.UUID;
 
-@Entity(name = "order_rules")
+@Table(name = "order_rules")
+@Entity
 public class OrderRule {
     @Id
     private UUID id;
 
     private String name;
 
+    @Column(name = "group_id")
     private UUID groupId;
 
     @OrderBy("orderId ASC")

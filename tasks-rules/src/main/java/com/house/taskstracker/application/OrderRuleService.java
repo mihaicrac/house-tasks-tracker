@@ -9,6 +9,7 @@ import com.house.taskstracker.domain.OrderRuleEvent;
 import com.house.taskstracker.domain.OrderRuleItem;
 import com.house.taskstracker.domain.OrderRuleRepository;
 import com.house.taskstracker.infrastructure.OrderOffsetChangedSource;
+import com.house.taskstracker.utils.UserContext;
 import lombok.AllArgsConstructor;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
@@ -44,9 +45,14 @@ public class OrderRuleService {
         return dtoTransformer.toOrderRuleDto(orderRuleRepository.findById(id).get());
     }
 
-    public List<OrderRuleDto> getOrderRules(UUID groupId) {
+    public List<OrderRuleDto> getOrderRulesByGroupId(UUID groupId) {
         return orderRuleRepository.findByGroupId(groupId).stream().map(g -> dtoTransformer.toOrderRuleDto(g)).collect(Collectors.toList());
     }
+
+    public List<OrderRuleDto> getOrderRulesByUserId(UUID userId) {
+        return orderRuleRepository.findByUserId(userId).stream().map(g -> dtoTransformer.toOrderRuleDto(g)).collect(Collectors.toList());
+    }
+
 
     private OrderRule toOrderRule(AddOrderRuleCommand command) {
         OrderRule rule = new OrderRule();
